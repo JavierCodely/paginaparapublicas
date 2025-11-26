@@ -8,7 +8,7 @@ function App() {
         <div className="flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8">
 
           {/* Logo del club - círculo placeholder */}
-          <img src="src/data/fotos/exodos.png" alt="Logo" className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-gray-700" />
+          <img src="/fotos/exodos.png" alt="Logo" className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover border-2 border-gray-700" />
 
           {/* Nombre del club */}
           <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center tracking-tight px-2">

@@ -14,51 +14,51 @@ export const rrppData: RRPPData[] = [
     id: 1,
     nombre: 'Debora',
     apellido: 'Chamorro',
-    urlImagen: 'src/data/fotos/debora.png',
+    urlImagen: '/fotos/debora.png',
     instagramUsername: 'debora_chamorrooo',
   },
   {
     id: 2,
     nombre: 'Mily',
     apellido: 'Goiris',
-    urlImagen: 'src/data/fotos/mily.png',
+    urlImagen: '/fotos/mily.png',
     instagramUsername: 'mily_.goirisss',
   },
   {
     id: 3,
     nombre: 'Karen',
     apellido: 'Duarte',
-    urlImagen: 'src/data/fotos/karen.png',
+    urlImagen: '/fotos/karen.png',
     instagramUsername: 'karen06.1',
   },
   {
     id: 4,
     nombre: 'Magui',
     apellido: 'Romero',
-    urlImagen: 'src/data/fotos/magui.png',
+    urlImagen: '/fotos/magui.png',
     instagramUsername: 'ma.gui.romero',
   },
   {
-    id: 4,
+    id: 5,
     nombre: 'Axel',
     apellido: 'Lov',
-    urlImagen: 'src/data/fotos/axel.png',
+    urlImagen: '/fotos/axel.png',
     instagramUsername: 'axelov_',
   },
   {
-    id: 5,
+    id: 6,
     nombre: 'Agustin',
     apellido: 'Escobar',
-    urlImagen: 'src/data/fotos/agustin.png',
+    urlImagen: '/fotos/agustin.png',
     instagramUsername: 'agusss.e01',
   },
 ];
 
 // INSTRUCCIONES:
 // 1. Para agregar un nuevo RRPP, copia uno de los objetos arriba y modifica los datos
-// 2. Para la URL de la imagen, puedes usar:
-//    - Una URL de Instagram (haz click derecho en la imagen > Copiar dirección de imagen)
-//    - Una URL de cualquier imagen en internet
-//    - Servicios como pravatar.cc, unsplash.com, etc.
+// 2. Para la URL de la imagen:
+//    - Coloca la imagen en la carpeta public/fotos/
+//    - Usa la ruta: '/fotos/nombre-de-la-imagen.png'
+//    - También puedes usar URLs externas (Instagram, etc.)
 // 3. El instagramUsername es el nombre de usuario SIN el @
 // 4. Después de hacer cambios, guarda el archivo y la página se actualizará automáticamente
