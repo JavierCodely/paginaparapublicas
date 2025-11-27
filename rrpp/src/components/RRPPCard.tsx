@@ -15,8 +15,21 @@ export const RRPPCard = ({
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const redirectUrl = `/redirect.html?url=${encodeURIComponent(instagramUrl)}`;
-    window.open(redirectUrl, '_blank');
+    const newWindow = window.open('about:blank', '_blank');
+
+    if (newWindow) {
+      // Navegar a Instagram
+      newWindow.location.href = instagramUrl;
+
+      // Intentar navegar de nuevo después de 1.5 segundos
+      setTimeout(() => {
+        try {
+          newWindow.location.href = instagramUrl;
+        } catch (error) {
+          console.log('No se pudo recargar automáticamente');
+        }
+      }, 1500);
+    }
   };
 
   return (
