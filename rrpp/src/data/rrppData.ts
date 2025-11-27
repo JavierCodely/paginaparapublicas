@@ -11,46 +11,63 @@ export interface RRPPData {
 
 export const rrppData: RRPPData[] = [
   {
+    id: 0,
+    nombre: 'Luz',
+    apellido: 'Duarte',
+    urlImagen: '/fotos/luz.png',
+    instagramUsername: 'luzduarte15',
+  },
+  
+  {
     id: 1,
+    nombre: 'Axel',
+    apellido: 'Oviedo',
+    urlImagen: '/fotos/axel.png',
+    instagramUsername: 'axelov_',
+  },
+
+  {
+    id: 2,
     nombre: 'Debora',
     apellido: 'Chamorro',
     urlImagen: '/fotos/debora.png',
     instagramUsername: 'debora_chamorrooo',
   },
   {
-    id: 2,
+    id: 3,
     nombre: 'Mily',
     apellido: 'Goiris',
     urlImagen: '/fotos/mily.png',
     instagramUsername: 'mily_.goirisss',
   },
   {
-    id: 3,
+    id: 4,
     nombre: 'Karen',
     apellido: 'Duarte',
     urlImagen: '/fotos/karen.png',
     instagramUsername: 'karen06.1',
   },
+  
   {
-    id: 4,
+    id: 5,
+    nombre: 'Agustin',
+    apellido: 'Escobar',
+    urlImagen: '/fotos/agustin.png',
+    instagramUsername: 'agusss.e01',
+  },
+  {
+    id: 6,
     nombre: 'Magui',
     apellido: 'Romero',
     urlImagen: '/fotos/magui.png',
     instagramUsername: 'ma.gui.romero',
   },
   {
-    id: 5,
-    nombre: 'Axel',
-    apellido: 'Oviedo',
-    urlImagen: '/fotos/axel.png',
-    instagramUsername: 'axelov_',
-  },
-  {
-    id: 6,
-    nombre: 'Agustin',
-    apellido: 'Escobar',
-    urlImagen: '/fotos/agustin.png',
-    instagramUsername: 'agusss.e01',
+    id: 7,
+    nombre: 'Alex',
+    apellido: 'Valenti',
+    urlImagen: '/fotos/chulo.png',
+    instagramUsername: 'alex_valenti10',
   },
 ];
 
