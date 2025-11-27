@@ -25,16 +25,24 @@ export const RRPPCard = ({
   const handleConfirm = () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isAndroid = /Android/.test(navigator.userAgent);
-    const isMobile = isIOS || isAndroid;
 
     setIsModalOpen(false);
 
-    if (isMobile) {
-      // Para móviles, crear un enlace temporal y hacer click programáticamente
-      // Esto permite que iOS/Android detecten y abran la app si está instalada
+    if (isAndroid) {
+      // Android: usar intent que abre la app si está instalada, sino web
+      const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
+
       const link = document.createElement('a');
-      link.href = `https://www.instagram.com/${instagramUsername}/`;
-      link.target = '_self'; // Abrir en la misma pestaña
+      link.href = intentUrl;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (isIOS) {
+      // iOS: usar URL scheme directo de Instagram
+      const appUrl = `instagram://user?username=${instagramUsername}`;
+
+      const link = document.createElement('a');
+      link.href = appUrl;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
