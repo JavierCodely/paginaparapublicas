@@ -51,14 +51,15 @@ function App() {
           />
 
           {/* Lista de RRPP o mensaje vacío */}
-          <div className="w-full space-y-2 sm:space-y-3 md:space-y-4">
+          <div className="w-full space-y-2 sm:space-y-3 md:space-y-4 transition-opacity duration-200">
             {filteredRRPP.length > 0 ? (
-              filteredRRPP.map((rrpp) => (
+              filteredRRPP.map((rrpp, index) => (
                 <RRPPCard
-                  key={rrpp.id}
+                  key={`${rrpp.id}-${selectedUbicacion || 'all'}`}
                   name={`${rrpp.nombre} ${rrpp.apellido}`}
                   photoUrl={rrpp.urlImagen}
                   instagramUsername={rrpp.instagramUsername}
+                  isFirstImage={index < 3}
                 />
               ))
             ) : (
