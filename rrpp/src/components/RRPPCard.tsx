@@ -13,6 +13,30 @@ export const RRPPCard = ({
 }: RRPPCardProps) => {
   const instagramUrl = `https://www.instagram.com/${instagramUsername}`;
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Intentar abrir en la app de Instagram
+      const appUrl = `instagram://user?username=${instagramUsername}`;
+      const startTime = Date.now();
+
+      window.location.href = appUrl;
+
+      // Si después de 1.5 segundos no se abrió la app, abrir en navegador
+      setTimeout(() => {
+        if (Date.now() - startTime < 2000) {
+          window.open(instagramUrl, '_blank');
+        }
+      }, 1500);
+    } else {
+      // En desktop, abrir directamente en navegador
+      window.open(instagramUrl, '_blank');
+    }
+  };
+
   return (
     <div
       className={`
@@ -38,7 +62,7 @@ export const RRPPCard = ({
         {/* Nombre clickeable centrado */}
         <a
           href={instagramUrl}
-          target="_blank"
+          onClick={handleClick}
           rel="noopener"
           className="
             flex-1 text-center
