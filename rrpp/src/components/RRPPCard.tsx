@@ -15,12 +15,8 @@ export const RRPPCard = ({
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const newWindow = window.open(instagramUrl, '_blank');
-    setTimeout(() => {
-      if (newWindow) {
-        newWindow.location.reload();
-      }
-    }, 1000);
+    const redirectUrl = `/redirect.html?url=${encodeURIComponent(instagramUrl)}`;
+    window.open(redirectUrl, '_blank');
   };
 
   return (
