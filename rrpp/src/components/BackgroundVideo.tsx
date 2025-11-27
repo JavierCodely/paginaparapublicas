@@ -9,64 +9,36 @@ export const BackgroundVideo = ({ videoUrl }: BackgroundVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Esperar a que todas las imágenes se carguen
-    const handleLoad = () => {
-      console.log('Página cargada, mostrando video');
-      setTimeout(() => {
-        setShouldLoad(true);
-      }, 500);
-    };
+    // Cargar video después de un delay mínimo para priorizar contenido
+    const timer = setTimeout(() => {
+      setShouldLoad(true);
+    }, 100); // Reducido de 500ms a 100ms
 
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
-    }
-
-    return () => {
-      window.removeEventListener('load', handleLoad);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     if (shouldLoad && videoRef.current) {
       const video = videoRef.current;
 
-      console.log('Intentando reproducir video');
-
-      const handleLoadedData = () => {
-        console.log('Video cargado, duración:', video.duration);
-      };
-
       const handleEnded = () => {
-        console.log('Video terminó, reiniciando...');
         video.currentTime = 0;
-        video.play().catch((error) => {
-          console.error('Error al reiniciar video:', error);
+        video.play().catch(() => {
+          // Silenciar errores de reproducción automática
         });
       };
 
-      const handleError = (e: Event) => {
-        console.error('Error en el video:', e);
-      };
-
-      video.addEventListener('loadeddata', handleLoadedData);
       video.addEventListener('ended', handleEnded);
-      video.addEventListener('error', handleError);
 
-      video.play().catch((error) => {
-        console.error('Error al reproducir video:', error);
+      video.play().catch(() => {
+        // Silenciar errores de reproducción automática
       });
 
       return () => {
-        video.removeEventListener('loadeddata', handleLoadedData);
         video.removeEventListener('ended', handleEnded);
-        video.removeEventListener('error', handleError);
       };
     }
   }, [shouldLoad]);
-
-  console.log('BackgroundVideo renderizado, shouldLoad:', shouldLoad);
 
   if (!shouldLoad) return null;
 
@@ -77,7 +49,8 @@ export const BackgroundVideo = ({ videoUrl }: BackgroundVideoProps) => {
         muted
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover opacity-30"
-        preload="auto"
+        preload="metadata"
+        poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
       >
         <source src={videoUrl} type="video/mp4" />
       </video>

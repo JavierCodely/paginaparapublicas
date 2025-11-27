@@ -65,6 +65,8 @@ export const RRPPCard = ({
               alt={name}
               className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-gray-700"
               loading="lazy"
+              decoding="async"
+              fetchPriority="low"
             />
           </div>
 
