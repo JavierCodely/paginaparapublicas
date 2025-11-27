@@ -13,23 +13,9 @@ export const RRPPCard = ({
 }: RRPPCardProps) => {
   const instagramUrl = `https://www.instagram.com/${instagramUsername}`;
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const newWindow = window.open('about:blank', '_blank');
-
-    if (newWindow) {
-      // Navegar a Instagram
-      newWindow.location.href = instagramUrl;
-
-      // Intentar navegar de nuevo después de 1.5 segundos
-      setTimeout(() => {
-        try {
-          newWindow.location.href = instagramUrl;
-        } catch (error) {
-          console.log('No se pudo recargar automáticamente');
-        }
-      }, 1500);
-    }
+  const handleClick = () => {
+    // Instagram detecta automáticamente si está en móvil y ofrece abrir la app
+    window.open(instagramUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
