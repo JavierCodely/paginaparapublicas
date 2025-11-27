@@ -1,10 +1,13 @@
 import { RRPPCard } from './components/RRPPCard';
+import { BackgroundVideo } from './components/BackgroundVideo';
 import { rrppData } from './data/rrppData';
 
 function App() {
   return (
     <div className="min-h-screen bg-[#1a1a1a] flex items-center justify-center px-3 py-6 sm:p-6 md:p-8">
-      <div className="w-full max-w-2xl">
+      {/* Video de fondo - se carga al final */}
+      <BackgroundVideo videoUrl="/videos/background.mp4" />
+      <div className="w-full max-w-2xl relative z-10">
         <div className="flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8">
 
           {/* Logo del club - círculo placeholder */}

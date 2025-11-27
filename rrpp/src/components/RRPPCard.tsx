@@ -16,21 +16,21 @@ export const RRPPCard = ({
   return (
     <div
       className={`
-        bg-black rounded-[50px] sm:rounded-[60px] md:rounded-[70px] p-2 sm:p-2.5
+        bg-black/40 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] p-1.5 sm:p-2
         transition-all duration-300
-        hover:scale-[1.02] sm:hover:scale-105 hover:bg-[#1a1a1a]
+        hover:scale-[1.02] sm:hover:scale-105 hover:bg-black/50
         border border-transparent hover:border-gray-700
         active:scale-[0.98]
         ${className}
       `}
     >
-      <div className="flex items-center gap-4 sm:gap-5">
+      <div className="flex items-center gap-3 sm:gap-4">
         {/* Foto circular del RRPP */}
         <div className="flex-shrink-0">
           <img
             src={photoUrl}
             alt={name}
-            className="w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36 rounded-full object-cover border-2 border-gray-700"
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-gray-700"
             loading="lazy"
           />
         </div>
@@ -39,7 +39,7 @@ export const RRPPCard = ({
         <a
           href={instagramUrl}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
           className="
             flex-1 text-center
             text-white font-semibold text-xl sm:text-2xl md:text-3xl
