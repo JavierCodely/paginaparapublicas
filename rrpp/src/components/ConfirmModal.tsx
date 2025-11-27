@@ -8,16 +8,38 @@ interface ConfirmModalProps {
 export const ConfirmModal = ({ isOpen, onClose, onConfirm, profileName }: ConfirmModalProps) => {
   if (!isOpen) return null;
 
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onClose();
+  };
+
+  const handleModalClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
+  const handleConfirm = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onConfirm();
+  };
+
+  const handleCancel = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onClose();
+  };
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      onClick={handleBackdropClick}
+    >
       {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
 
       {/* Modal */}
-      <div className="relative bg-[#1a1a1a] border-2 border-gray-700 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl">
+      <div
+        className="relative bg-[#1a1a1a] border-2 border-gray-700 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl"
+        onClick={handleModalClick}
+      >
         <h2 className="text-white text-xl sm:text-2xl font-bold mb-4 text-center">
           {profileName}
         </h2>
@@ -28,7 +50,7 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm, profileName }: Confir
 
         <div className="flex flex-col gap-3">
           <button
-            onClick={onConfirm}
+            onClick={handleConfirm}
             className="
               w-full py-3 px-6 rounded-full
               bg-gradient-to-r from-pink-500 to-pink-600
@@ -43,7 +65,7 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm, profileName }: Confir
           </button>
 
           <button
-            onClick={onClose}
+            onClick={handleCancel}
             className="
               w-full py-3 px-6 rounded-full
               bg-gray-700 hover:bg-gray-600
