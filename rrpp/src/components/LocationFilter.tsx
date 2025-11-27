@@ -9,9 +9,6 @@ interface LocationFilterProps {
 export const LocationFilter = ({ ubicaciones, selectedUbicacion, onSelectUbicacion }: LocationFilterProps) => {
   return (
     <div className="w-full">
-      <h3 className="text-white text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center">
-        Filtra por ubicación
-      </h3>
       <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
         {/* Botón "Todas" */}
         <button
