@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { ConfirmModal } from './ConfirmModal';
+
 interface RRPPCardProps {
   name: string;
   photoUrl: string;
@@ -12,10 +15,34 @@ export const RRPPCard = ({
   className = ''
 }: RRPPCardProps) => {
   const instagramUrl = `https://www.instagram.com/${instagramUsername}`;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleClick = () => {
-    // Instagram detecta automáticamente si está en móvil y ofrece abrir la app
-    window.open(instagramUrl, '_blank', 'noopener,noreferrer');
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
+
+  const handleConfirm = () => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
+
+    setIsModalOpen(false);
+
+    if (isIOS) {
+      // En iOS, intenta abrir la app directamente
+      window.location.href = `instagram://user?username=${instagramUsername}`;
+      // Fallback a web después de un breve delay
+      setTimeout(() => {
+        window.location.href = instagramUrl;
+      }, 1500);
+    } else if (isAndroid) {
+      // En Android, usa intent para una experiencia más fluida
+      const intent = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
+      window.location.href = intent;
+    } else {
+      // Desktop: abre en nueva pestaña
+      window.open(instagramUrl, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -58,6 +85,14 @@ export const RRPPCard = ({
           {name}
         </a>
       </div>
+
+      {/* Modal de confirmación */}
+      <ConfirmModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={handleConfirm}
+        profileName={name}
+      />
     </div>
   );
 };
