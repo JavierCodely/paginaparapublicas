@@ -33,21 +33,18 @@ export const RRPPCard = ({
     if (isAndroid) {
       // Android: usar intent que abre la app si está instalada, sino web
       const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
-
-      const link = document.createElement('a');
-      link.href = intentUrl;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      window.location.href = intentUrl;
     } else if (isIOS) {
       // iOS: usar URL scheme directo de Instagram
       const appUrl = `instagram://user?username=${instagramUsername}`;
 
-      const link = document.createElement('a');
-      link.href = appUrl;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Intentar abrir la app de Instagram
+      window.location.href = appUrl;
+
+      // Fallback: si la app no se abre en 1.5 segundos, abrir en navegador
+      setTimeout(() => {
+        window.location.href = instagramUrl;
+      }, 1500);
     } else {
       // Desktop: abre en nueva pestaña
       window.open(instagramUrl, '_blank', 'noopener,noreferrer');
