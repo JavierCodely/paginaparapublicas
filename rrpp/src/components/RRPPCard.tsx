@@ -29,11 +29,30 @@ export const RRPPCard = ({
     setIsModalOpen(false);
 
     if (isIOS) {
-      // En iOS, intenta abrir la app directamente
-      window.location.href = `instagram://user?username=${instagramUsername}`;
-      // Fallback a web después de un breve delay
+      // En iOS, intenta abrir la app de Instagram
+      const appUrl = `instagram://user?username=${instagramUsername}`;
+      const webUrl = instagramUrl;
+
+      let appOpened = false;
+
+      // Detectar si la app se abrió (página pierde visibilidad)
+      const handleVisibilityChange = () => {
+        if (document.hidden) {
+          appOpened = true;
+        }
+      };
+
+      document.addEventListener('visibilitychange', handleVisibilityChange);
+
+      // Intentar abrir la app
+      window.location.href = appUrl;
+
+      // Si después de 1.5 segundos la app no se abrió, ir a la web
       setTimeout(() => {
-        window.location.href = instagramUrl;
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
+        if (!appOpened) {
+          window.location.href = webUrl;
+        }
       }, 1500);
     } else if (isAndroid) {
       // En Android, usa intent para una experiencia más fluida

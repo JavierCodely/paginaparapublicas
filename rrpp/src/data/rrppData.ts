@@ -52,7 +52,7 @@ export const rrppData: RRPPData[] = [
     nombre: 'Abby',
     apellido: 'Pfaffenzeller',
     urlImagen: '/fotos/aby.png',
-    instagramUsername: 'abby_pfaffenzeller08',
+    instagramUsername: 'abby__pfaffenzeller08',
     ubicacion: 'Puerto Esperanza',
   },
   {
