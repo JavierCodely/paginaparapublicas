@@ -1,13 +1,24 @@
+import { useState } from 'react';
 import { RRPPCard } from './components/RRPPCard';
 import { BackgroundVideo } from './components/BackgroundVideo';
-import { rrppData } from './data/rrppData';
+import { LocationFilter } from './components/LocationFilter';
+import { EmptyState } from './components/EmptyState';
+import { rrppData, ubicaciones } from './data/rrppData';
+import type { Ubicacion } from './data/rrppData';
 
 function App() {
+  const [selectedUbicacion, setSelectedUbicacion] = useState<Ubicacion | null>(null);
+
+  // Filtrar RRPP por ubicación
+  const filteredRRPP = selectedUbicacion
+    ? rrppData.filter(rrpp => rrpp.ubicacion === selectedUbicacion)
+    : rrppData;
+
   return (
-    <div className="min-h-screen bg-[#1a1a1a] flex items-center justify-center px-3 py-6 sm:p-6 md:p-8">
+    <div className="min-h-screen bg-[#1a1a1a] px-3 py-6 sm:p-6 md:p-8">
       {/* Video de fondo - se carga al final */}
       <BackgroundVideo videoUrl="/videos/background.mp4" />
-      <div className="w-full max-w-2xl relative z-10">
+      <div className="w-full max-w-2xl mx-auto relative z-10">
         <div className="flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8">
 
           {/* Logo del club - círculo placeholder */}
@@ -26,16 +37,27 @@ function App() {
           {/* Separador visual */}
           <div className="w-16 sm:w-24 h-1 bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
 
-          {/* Lista de RRPP */}
+          {/* Filtros de ubicación */}
+          <LocationFilter
+            ubicaciones={ubicaciones}
+            selectedUbicacion={selectedUbicacion}
+            onSelectUbicacion={setSelectedUbicacion}
+          />
+
+          {/* Lista de RRPP o mensaje vacío */}
           <div className="w-full space-y-2 sm:space-y-3 md:space-y-4">
-            {rrppData.map((rrpp) => (
-              <RRPPCard
-                key={rrpp.id}
-                name={`${rrpp.nombre} ${rrpp.apellido}`}
-                photoUrl={rrpp.urlImagen}
-                instagramUsername={rrpp.instagramUsername}
-              />
-            ))}
+            {filteredRRPP.length > 0 ? (
+              filteredRRPP.map((rrpp) => (
+                <RRPPCard
+                  key={rrpp.id}
+                  name={`${rrpp.nombre} ${rrpp.apellido}`}
+                  photoUrl={rrpp.urlImagen}
+                  instagramUsername={rrpp.instagramUsername}
+                />
+              ))
+            ) : (
+              <EmptyState ubicacion={selectedUbicacion!} />
+            )}
           </div>
 
           {/* Footer opcional */}
