@@ -15,26 +15,12 @@ export const RRPPCard = ({
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-    if (isMobile) {
-      // Intentar abrir en la app de Instagram
-      const appUrl = `instagram://user?username=${instagramUsername}`;
-      const startTime = Date.now();
-
-      window.location.href = appUrl;
-
-      // Si después de 1.5 segundos no se abrió la app, abrir en navegador
-      setTimeout(() => {
-        if (Date.now() - startTime < 2000) {
-          window.open(instagramUrl, '_blank');
-        }
-      }, 1500);
-    } else {
-      // En desktop, abrir directamente en navegador
-      window.open(instagramUrl, '_blank');
-    }
+    const newWindow = window.open(instagramUrl, '_blank');
+    setTimeout(() => {
+      if (newWindow) {
+        newWindow.location.reload();
+      }
+    }, 1000);
   };
 
   return (
