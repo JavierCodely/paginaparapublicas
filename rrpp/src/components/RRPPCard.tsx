@@ -25,39 +25,19 @@ export const RRPPCard = ({
   const handleConfirm = () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isAndroid = /Android/.test(navigator.userAgent);
+    const isMobile = isIOS || isAndroid;
 
     setIsModalOpen(false);
 
-    if (isIOS) {
-      // En iOS, intenta abrir la app de Instagram
-      const appUrl = `instagram://user?username=${instagramUsername}`;
-      const webUrl = instagramUrl;
-
-      let appOpened = false;
-
-      // Detectar si la app se abrió (página pierde visibilidad)
-      const handleVisibilityChange = () => {
-        if (document.hidden) {
-          appOpened = true;
-        }
-      };
-
-      document.addEventListener('visibilitychange', handleVisibilityChange);
-
-      // Intentar abrir la app
-      window.location.href = appUrl;
-
-      // Si después de 1.5 segundos la app no se abrió, ir a la web
-      setTimeout(() => {
-        document.removeEventListener('visibilitychange', handleVisibilityChange);
-        if (!appOpened) {
-          window.location.href = webUrl;
-        }
-      }, 1500);
-    } else if (isAndroid) {
-      // En Android, usa intent para una experiencia más fluida
-      const intent = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
-      window.location.href = intent;
+    if (isMobile) {
+      // Para móviles, crear un enlace temporal y hacer click programáticamente
+      // Esto permite que iOS/Android detecten y abran la app si está instalada
+      const link = document.createElement('a');
+      link.href = `https://www.instagram.com/${instagramUsername}/`;
+      link.target = '_self'; // Abrir en la misma pestaña
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } else {
       // Desktop: abre en nueva pestaña
       window.open(instagramUrl, '_blank', 'noopener,noreferrer');

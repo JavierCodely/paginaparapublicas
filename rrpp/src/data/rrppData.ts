@@ -74,6 +74,14 @@ export const rrppData: RRPPData[] = [
   },
   {
     id: 6,
+    nombre: 'Dara',
+    apellido: 'Aguilar',
+    urlImagen: '/fotos/dara.png',
+    instagramUsername: 'daaraa_.0',
+    ubicacion: 'Puerto Esperanza',
+  },
+  {
+    id: 7,
     nombre: 'Magui',
     apellido: 'Romero',
     urlImagen: '/fotos/magui.png',
@@ -81,7 +89,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Puerto Wanda',
   },
   {
-    id: 7,
+    id: 8,
     nombre: 'Alex',
     apellido: 'Valenti',
     urlImagen: '/fotos/chulo.png',
@@ -89,7 +97,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Eldorado',
   },
   {
-    id: 8,
+    id: 9,
     nombre: 'Fabri',
     apellido: 'Marquez',
     urlImagen: '/fotos/fabri.png',
