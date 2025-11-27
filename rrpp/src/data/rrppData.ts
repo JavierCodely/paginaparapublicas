@@ -41,7 +41,7 @@ export const rrppData: RRPPData[] = [
   {
     id: 5,
     nombre: 'Axel',
-    apellido: 'Lov',
+    apellido: 'Oviedo',
     urlImagen: '/fotos/axel.png',
     instagramUsername: 'axelov_',
   },
