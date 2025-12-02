@@ -41,10 +41,18 @@ export const rrppData: RRPPData[] = [
     instagramUsername: 'mily_pereyra09',
     ubicacion: 'Puerto Wanda',
   },
-  
-  
+
   {
     id: 2,
+    nombre: 'Yesi',
+    apellido: 'Villalba',
+    urlImagen: '/fotos/yesi.webp',
+    instagramUsername: 'yesi_villalba04',
+    ubicacion: 'Puerto Wanda',
+  },
+  
+  {
+    id: 3,
     nombre: 'Agustin',
     apellido: 'Escobar',
     urlImagen: '/fotos/agustin.webp',
@@ -53,7 +61,7 @@ export const rrppData: RRPPData[] = [
   },
 
   {
-    id: 3,
+    id: 4,
     nombre: 'Axel',
     apellido: 'Oviedo',
     urlImagen: '/fotos/axel.webp',
@@ -64,7 +72,7 @@ export const rrppData: RRPPData[] = [
 
 
   {
-    id: 4,
+    id: 5,
     nombre: 'Karen',
     apellido: 'Duarte',
     urlImagen: '/fotos/karen.webp',
@@ -73,7 +81,7 @@ export const rrppData: RRPPData[] = [
   },
   
   {
-    id: 5,
+    id: 6,
     nombre: 'Debora',
     apellido: 'Chamorro',
     urlImagen: '/fotos/debora.webp',
@@ -82,7 +90,7 @@ export const rrppData: RRPPData[] = [
   },
   
   {
-    id: 6,
+    id: 7,
     nombre: 'Abby',
     apellido: 'Pfaffenzeller',
     urlImagen: '/fotos/aby.webp',
@@ -91,7 +99,7 @@ export const rrppData: RRPPData[] = [
   },
 
   {
-    id: 7,
+    id: 8,
     nombre: 'Dara',
     apellido: 'Aguilar',
     urlImagen: '/fotos/dara.webp',
@@ -99,7 +107,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Puerto Esperanza',
   },
   {
-    id: 8,
+    id: 9,
     nombre: 'Magui',
     apellido: 'Romero',
     urlImagen: '/fotos/magui.webp',
@@ -107,7 +115,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Puerto Wanda',
   },
   {
-    id: 9,
+    id: 10,
     nombre: 'Alex',
     apellido: 'Valenti',
     urlImagen: '/fotos/chulo.webp',
@@ -115,7 +123,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Eldorado',
   },
   {
-    id: 10,
+    id: 11,
     nombre: 'Fabri',
     apellido: 'Marquez',
     urlImagen: '/fotos/fabri.webp',
