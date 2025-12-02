@@ -42,14 +42,6 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Wanda',
   },
 
-  {
-    id: 2,
-    nombre: 'Yesi',
-    apellido: 'Villalba',
-    urlImagen: '/fotos/yesi.webp',
-    instagramUsername: 'yesi_villalba04',
-    ubicacion: 'Wanda',
-  },
 
   {
     id: 3,
@@ -100,6 +92,15 @@ export const rrppData: RRPPData[] = [
   
   {
     id: 8,
+    nombre: 'Yesi',
+    apellido: 'Villalba',
+    urlImagen: '/fotos/yesi.webp',
+    instagramUsername: 'yesi_villalba04',
+    ubicacion: 'Wanda',
+  },
+  
+  {
+    id: 9,
     nombre: 'Abby',
     apellido: 'Pfaffenzeller',
     urlImagen: '/fotos/aby.webp',
@@ -109,7 +110,7 @@ export const rrppData: RRPPData[] = [
 
     
   {
-    id: 9,
+    id: 10,
     nombre: 'Debora',
     apellido: 'Chamorro',
     urlImagen: '/fotos/debora.webp',
@@ -117,7 +118,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Esperanza',
   },
   {
-    id: 10,
+    id: 11,
     nombre: 'Magui',
     apellido: 'Romero',
     urlImagen: '/fotos/magui.webp',
@@ -125,7 +126,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Wanda',
   },
   {
-    id: 11,
+    id: 12,
     nombre: 'Alex',
     apellido: 'Valenti',
     urlImagen: '/fotos/chulo.webp',
@@ -133,7 +134,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Eldorado',
   },
   {
-    id: 12,
+    id: 13,
     nombre: 'Fabri',
     apellido: 'Marquez',
     urlImagen: '/fotos/fabri.webp',
