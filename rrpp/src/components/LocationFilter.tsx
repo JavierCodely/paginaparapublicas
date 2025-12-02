@@ -23,7 +23,7 @@ export const LocationFilter = ({ ubicaciones, selectedUbicacion, onSelectUbicaci
             }
           `}
         >
-          Todas
+          Todos
         </button>
 
         {/* Botones de ubicaciones */}
