@@ -82,10 +82,10 @@ export const rrppData: RRPPData[] = [
   
   {
     id: 6,
-    nombre: 'Debora',
-    apellido: 'Chamorro',
-    urlImagen: '/fotos/debora.webp',
-    instagramUsername: 'debora_chamorrooo',
+    nombre: 'Dara',
+    apellido: 'Aguilar',
+    urlImagen: '/fotos/dara.webp',
+    instagramUsername: 'daaraa_.0',
     ubicacion: 'Puerto Esperanza',
   },
   
@@ -98,12 +98,13 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Puerto Esperanza',
   },
 
+    
   {
     id: 8,
-    nombre: 'Dara',
-    apellido: 'Aguilar',
-    urlImagen: '/fotos/dara.webp',
-    instagramUsername: 'daaraa_.0',
+    nombre: 'Debora',
+    apellido: 'Chamorro',
+    urlImagen: '/fotos/debora.webp',
+    instagramUsername: 'debora_chamorrooo',
     ubicacion: 'Puerto Esperanza',
   },
   {
