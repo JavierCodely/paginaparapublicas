@@ -1,12 +1,12 @@
 // Archivo de datos de RRPP
 // Edita este archivo para agregar, modificar o eliminar RRPP
 
-export type Ubicacion = 'Puerto Esperanza' | 'Puerto Wanda' | 'Puerto Libertad' | 'Eldorado' | 'Iguazu';
+export type Ubicacion = 'Esperanza' | 'Wanda' | 'Libertad' | 'Eldorado' | 'Iguazu';
 
 export const ubicaciones: Ubicacion[] = [
-  'Puerto Esperanza',
-  'Puerto Wanda',
-  'Puerto Libertad',
+  'Esperanza',
+  'Wanda',
+  'Libertad',
   'Eldorado',
   'Iguazu'
 ];
@@ -29,7 +29,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Duarte',
     urlImagen: '/fotos/luz.webp',
     instagramUsername: 'luzduarte15',
-    ubicacion: 'Puerto Esperanza',
+    ubicacion: 'Esperanza',
   },
 
 
@@ -39,7 +39,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Pereyra',
     urlImagen: '/fotos/Screenshot_20251201_230432_Instagram(1).webp',
     instagramUsername: 'mily_pereyra09',
-    ubicacion: 'Puerto Wanda',
+    ubicacion: 'Wanda',
   },
 
   {
@@ -48,7 +48,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Villalba',
     urlImagen: '/fotos/yesi.webp',
     instagramUsername: 'yesi_villalba04',
-    ubicacion: 'Puerto Wanda',
+    ubicacion: 'Wanda',
   },
   
   {
@@ -57,7 +57,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Escobar',
     urlImagen: '/fotos/agustin.webp',
     instagramUsername: 'agusss.e01',
-    ubicacion: 'Puerto Esperanza',
+    ubicacion: 'Esperanza',
   },
 
   {
@@ -66,7 +66,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Oviedo',
     urlImagen: '/fotos/axel.webp',
     instagramUsername: 'axelov_',
-    ubicacion: 'Puerto Esperanza',
+    ubicacion: 'Esperanza',
   },
   
 
@@ -77,7 +77,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Duarte',
     urlImagen: '/fotos/karen.webp',
     instagramUsername: 'karen06.1',
-    ubicacion: 'Puerto Esperanza',
+    ubicacion: 'Esperanza',
   },
   
   {
@@ -86,7 +86,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Aguilar',
     urlImagen: '/fotos/dara.webp',
     instagramUsername: 'daaraa_.0',
-    ubicacion: 'Puerto Esperanza',
+    ubicacion: 'Esperanza',
   },
   
   {
@@ -95,7 +95,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Pfaffenzeller',
     urlImagen: '/fotos/aby.webp',
     instagramUsername: 'abby__pfaffenzeller08',
-    ubicacion: 'Puerto Esperanza',
+    ubicacion: 'Esperanza',
   },
 
     
@@ -105,7 +105,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Chamorro',
     urlImagen: '/fotos/debora.webp',
     instagramUsername: 'debora_chamorrooo',
-    ubicacion: 'Puerto Esperanza',
+    ubicacion: 'Esperanza',
   },
   {
     id: 9,
@@ -113,7 +113,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Romero',
     urlImagen: '/fotos/magui.webp',
     instagramUsername: 'ma.gui.romero',
-    ubicacion: 'Puerto Wanda',
+    ubicacion: 'Wanda',
   },
   {
     id: 10,
@@ -129,7 +129,7 @@ export const rrppData: RRPPData[] = [
     apellido: 'Marquez',
     urlImagen: '/fotos/fabri.webp',
     instagramUsername: 'm_fabri1',
-    ubicacion: 'Puerto Wanda',
+    ubicacion: 'Wanda',
   },
 ];
 
