@@ -33,27 +33,20 @@ export const rrppData: RRPPData[] = [
   },
 
 
+  
   {
     id: 1,
-    nombre: 'Mily',
-    apellido: 'Pereyra',
-    urlImagen: '/fotos/Screenshot_20251201_230432_Instagram(1).webp',
-    instagramUsername: 'mily_pereyra09',
-    ubicacion: 'Wanda',
+    nombre: 'Axel',
+    apellido: 'Oviedo',
+    urlImagen: '/fotos/axel.webp',
+    instagramUsername: 'axelov_',
+    ubicacion: 'Esperanza',
   },
 
 
-  {
-    id: 3,
-    nombre: 'Pablo',
-    apellido: 'Mielnik',
-    urlImagen: '/fotos/pablomielnik.webp',
-    instagramUsername: 'pabloo_mielnik',
-    ubicacion: 'Eldorado',
-  },
 
   {
-    id: 4,
+    id: 2,
     nombre: 'Agustin',
     apellido: 'Escobar',
     urlImagen: '/fotos/agustin.webp',
@@ -61,19 +54,19 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Esperanza',
   },
 
-  {
-    id: 5,
-    nombre: 'Axel',
-    apellido: 'Oviedo',
-    urlImagen: '/fotos/axel.webp',
-    instagramUsername: 'axelov_',
-    ubicacion: 'Esperanza',
-  },
   
+  {
+    id: 3,
+    nombre: 'Pablo',
+    apellido: 'Mielnik',
+    urlImagen: '/fotos/pablomielnik.webp',
+    instagramUsername: 'pabloo_mielnik',
+    ubicacion: 'Eldorado',
+  },  
 
 
   {
-    id: 6,
+    id: 4,
     nombre: 'Karen',
     apellido: 'Duarte',
     urlImagen: '/fotos/karen.webp',
@@ -81,8 +74,9 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Esperanza',
   },
   
+  
   {
-    id: 7,
+    id: 5,
     nombre: 'Dara',
     apellido: 'Aguilar',
     urlImagen: '/fotos/dara.webp',
@@ -91,7 +85,7 @@ export const rrppData: RRPPData[] = [
   },
   
   {
-    id: 8,
+    id: 6,
     nombre: 'Yesi',
     apellido: 'Villalba',
     urlImagen: '/fotos/yesi.webp',
@@ -100,7 +94,7 @@ export const rrppData: RRPPData[] = [
   },
   
   {
-    id: 9,
+    id: 7,
     nombre: 'Abby',
     apellido: 'Pfaffenzeller',
     urlImagen: '/fotos/aby.webp',
@@ -108,39 +102,14 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Esperanza',
   },
 
-    
   {
-    id: 10,
-    nombre: 'Debora',
-    apellido: 'Chamorro',
-    urlImagen: '/fotos/debora.webp',
-    instagramUsername: 'debora_chamorrooo',
-    ubicacion: 'Esperanza',
-  },
-  {
-    id: 11,
-    nombre: 'Magui',
-    apellido: 'Romero',
-    urlImagen: '/fotos/magui.webp',
-    instagramUsername: 'ma.gui.romero',
-    ubicacion: 'Wanda',
-  },
-  {
-    id: 12,
+    id: 8,
     nombre: 'Alex',
     apellido: 'Valenti',
     urlImagen: '/fotos/chulo.webp',
     instagramUsername: 'alex_valenti10',
     ubicacion: 'Eldorado',
-  },
-  {
-    id: 13,
-    nombre: 'Fabri',
-    apellido: 'Marquez',
-    urlImagen: '/fotos/fabri.webp',
-    instagramUsername: 'm_fabri1',
-    ubicacion: 'Wanda',
-  },
+  }
 ];
 
 // INSTRUCCIONES:
