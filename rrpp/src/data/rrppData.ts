@@ -75,14 +75,6 @@ export const rrppData: RRPPData[] = [
   },
   
   
-  {
-    id: 5,
-    nombre: 'Dara',
-    apellido: 'Aguilar',
-    urlImagen: '/fotos/dara.webp',
-    instagramUsername: 'daaraa_.0',
-    ubicacion: 'Esperanza',
-  },
   
   {
     id: 6,
