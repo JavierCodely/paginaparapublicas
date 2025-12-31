@@ -23,14 +23,6 @@ export interface RRPPData {
 export const rrppData: RRPPData[] = [
   
   
-  {
-    id: 0,
-    nombre: 'Luz',
-    apellido: 'Duarte',
-    urlImagen: '/fotos/luz.webp',
-    instagramUsername: 'luzduarte15',
-    ubicacion: 'Esperanza',
-  },
 
 
   
@@ -42,11 +34,20 @@ export const rrppData: RRPPData[] = [
     instagramUsername: 'axelov_',
     ubicacion: 'Esperanza',
   },
+  
+  {
+    id: 2,
+    nombre: 'Alex',
+    apellido: 'Valenti',
+    urlImagen: '/fotos/chulo.webp',
+    instagramUsername: 'alex_valenti10',
+    ubicacion: 'Eldorado',
+  },
 
 
 
   {
-    id: 2,
+    id: 3,
     nombre: 'Agustin',
     apellido: 'Escobar',
     urlImagen: '/fotos/agustin.webp',
@@ -56,17 +57,17 @@ export const rrppData: RRPPData[] = [
 
   
   {
-    id: 3,
-    nombre: 'Pablo',
-    apellido: 'Mielnik',
-    urlImagen: '/fotos/pablomielnik.webp',
-    instagramUsername: 'pabloo_mielnik',
-    ubicacion: 'Eldorado',
-  },  
-
+    id: 4,
+    nombre: 'Luz',
+    apellido: 'Duarte',
+    urlImagen: '/fotos/luz.webp',
+    instagramUsername: 'luzduarte15',
+    ubicacion: 'Esperanza',
+  },
+  
 
   {
-    id: 4,
+    id: 5,
     nombre: 'Karen',
     apellido: 'Duarte',
     urlImagen: '/fotos/karen.webp',
@@ -74,10 +75,35 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Esperanza',
   },
   
-  
-  
   {
     id: 6,
+    nombre: 'Abby',
+    apellido: 'Pfaffenzeller',
+    urlImagen: '/fotos/aby.webp',
+    instagramUsername: 'abby__pfaffenzeller08',
+    ubicacion: 'Esperanza',
+  },
+  {
+    id: 7,
+    nombre: 'Pao',
+    apellido: 'Borja',
+    urlImagen: '/fotos/paoborja.jpg',
+    instagramUsername: 'paoo_borja',
+    ubicacion: 'Esperanza',
+  },
+  
+  {
+    id: 8,
+    nombre: 'Pablo',
+    apellido: 'Mielnik',
+    urlImagen: '/fotos/pablomielnik.webp',
+    instagramUsername: 'pabloo_mielnik',
+    ubicacion: 'Eldorado',
+  },  
+
+  
+  {
+    id: 8,
     nombre: 'Yesi',
     apellido: 'Villalba',
     urlImagen: '/fotos/yesi.webp',
@@ -85,23 +111,7 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Wanda',
   },
   
-  {
-    id: 7,
-    nombre: 'Abby',
-    apellido: 'Pfaffenzeller',
-    urlImagen: '/fotos/aby.webp',
-    instagramUsername: 'abby__pfaffenzeller08',
-    ubicacion: 'Esperanza',
-  },
 
-  {
-    id: 8,
-    nombre: 'Alex',
-    apellido: 'Valenti',
-    urlImagen: '/fotos/chulo.webp',
-    instagramUsername: 'alex_valenti10',
-    ubicacion: 'Eldorado',
-  }
 ];
 
 // INSTRUCCIONES:
