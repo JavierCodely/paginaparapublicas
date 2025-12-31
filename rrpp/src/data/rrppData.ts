@@ -24,10 +24,18 @@ export const rrppData: RRPPData[] = [
   
   
 
+  {
+    id: 1,
+    nombre: 'Alex',
+    apellido: 'Valenti',
+    urlImagen: '/fotos/chulo.webp',
+    instagramUsername: 'alex_valenti10',
+    ubicacion: 'Eldorado',
+  },
 
   
   {
-    id: 1,
+    id: 2,
     nombre: 'Axel',
     apellido: 'Oviedo',
     urlImagen: '/fotos/axel.webp',
@@ -35,14 +43,6 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Esperanza',
   },
   
-  {
-    id: 2,
-    nombre: 'Alex',
-    apellido: 'Valenti',
-    urlImagen: '/fotos/chulo.webp',
-    instagramUsername: 'alex_valenti10',
-    ubicacion: 'Eldorado',
-  },
 
 
 
