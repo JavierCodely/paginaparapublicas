@@ -77,14 +77,6 @@ export const rrppData: RRPPData[] = [
   
   {
     id: 6,
-    nombre: 'Abby',
-    apellido: 'Pfaffenzeller',
-    urlImagen: '/fotos/aby.webp',
-    instagramUsername: 'abby__pfaffenzeller08',
-    ubicacion: 'Esperanza',
-  },
-  {
-    id: 7,
     nombre: 'Pao',
     apellido: 'Borja',
     urlImagen: '/fotos/paoborja.jpg',
@@ -93,7 +85,7 @@ export const rrppData: RRPPData[] = [
   },
   
   {
-    id: 8,
+    id: 7,
     nombre: 'Pablo',
     apellido: 'Mielnik',
     urlImagen: '/fotos/pablomielnik.webp',
@@ -103,7 +95,7 @@ export const rrppData: RRPPData[] = [
 
   
   {
-    id: 9,
+    id: 8,
     nombre: 'Yesi',
     apellido: 'Villalba',
     urlImagen: '/fotos/yesi.webp',
