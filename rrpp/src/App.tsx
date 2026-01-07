@@ -24,7 +24,7 @@ function App() {
           {/* Logos de sponsors */}
           <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 -my-2 sm:-my-3">
             <img
-              src="/sponsor/logoizquierdo.webp"
+              src="/sponsor/logoderecho.webp"
               alt="Sponsor Izquierdo"
               className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain"
               fetchPriority="high"

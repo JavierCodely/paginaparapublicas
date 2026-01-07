@@ -20,12 +20,12 @@ export interface RRPPData {
   ubicacion: Ubicacion;
 }
 
-export const rrppData: RRPPData[] = [
+// Array de datos sin IDs - los IDs se asignan automáticamente según el orden
+const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   
   
 
   {
-    id: 1,
     nombre: 'Alex',
     apellido: 'Valenti',
     urlImagen: '/fotos/chulo.webp',
@@ -33,9 +33,8 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Eldorado',
   },
 
-  
+
   {
-    id: 2,
     nombre: 'Axel',
     apellido: 'Oviedo',
     urlImagen: '/fotos/axel.webp',
@@ -47,7 +46,6 @@ export const rrppData: RRPPData[] = [
 
 
   {
-    id: 3,
     nombre: 'Agustin',
     apellido: 'Escobar',
     urlImagen: '/fotos/agustin.webp',
@@ -55,47 +53,85 @@ export const rrppData: RRPPData[] = [
     ubicacion: 'Esperanza',
   },
 
-  
   {
-    id: 4,
+    nombre: 'Sofi',
+    apellido: 'Benitez',
+    urlImagen: '/fotos/soffibenitezz.webp',
+    instagramUsername: '__soffibenitezz',
+    ubicacion: 'Esperanza',
+  },
+  {
+    nombre: 'Ayelen',
+    apellido: 'Paz',
+    urlImagen: '/fotos/pazayelen.webp',
+    instagramUsername: 'pazayelen__',
+    ubicacion: 'Eldorado',
+  },
+
+   {
+    nombre: 'Lauty',
+    apellido: 'Lopez',
+    urlImagen: '/fotos/lautylopez.webp',
+    instagramUsername: 'lauty_lopez013',
+    ubicacion: 'Wanda',
+  },
+  {
     nombre: 'Luz',
     apellido: 'Duarte',
     urlImagen: '/fotos/luz.webp',
     instagramUsername: 'luzduarte15',
     ubicacion: 'Esperanza',
   },
-  
 
-  {
-    id: 5,
-    nombre: 'Karen',
-    apellido: 'Duarte',
-    urlImagen: '/fotos/karen.webp',
-    instagramUsername: 'karen06.1',
+   {
+    nombre: 'Abby',
+    apellido: 'Pfaffenzeller',
+    urlImagen: '/fotos/aby.webp',
+    instagramUsername: 'abby-_pfaffenzeller08',
     ubicacion: 'Esperanza',
   },
-  
+
   {
-    id: 6,
     nombre: 'Pao',
     apellido: 'Borja',
     urlImagen: '/fotos/paoborja.jpg',
     instagramUsername: 'paoo_borja',
     ubicacion: 'Esperanza',
   },
-  
+
+
+    {
+    nombre: 'Debora',
+    apellido: 'Chavez',
+    urlImagen: '/fotos/debora.webp',
+    instagramUsername: 'debora_chamorrooo',
+    ubicacion: 'Esperanza',
+  },
+
   {
-    id: 7,
+    nombre: 'Yuli',
+    apellido: 'Recalde',
+    urlImagen: '/fotos/yuli.webp',
+    instagramUsername: '_yuli.recalde',
+    ubicacion: 'Eldorado',
+  },
+   {
+    nombre: 'Magali',
+    apellido: 'Pinto',
+    urlImagen: '/fotos/magapinto.webp',
+    instagramUsername: '_magapinto',
+    ubicacion: 'Eldorado',
+  },
+  {
     nombre: 'Pablo',
     apellido: 'Mielnik',
     urlImagen: '/fotos/pablomielnik.webp',
     instagramUsername: 'pabloo_mielnik',
     ubicacion: 'Eldorado',
-  },  
+  },
 
-  
+
   {
-    id: 8,
     nombre: 'Yesi',
     apellido: 'Villalba',
     urlImagen: '/fotos/yesi.webp',
@@ -106,8 +142,15 @@ export const rrppData: RRPPData[] = [
 
 ];
 
+// Función que asigna IDs automáticamente según el orden
+export const rrppData: RRPPData[] = rrppDataSinId.map((rrpp, index) => ({
+  ...rrpp,
+  id: index + 1
+}));
+
 // INSTRUCCIONES:
 // 1. Para agregar un nuevo RRPP, copia uno de los objetos arriba y modifica los datos
+//    IMPORTANTE: NO agregues el campo 'id', se asigna automáticamente según el orden
 // 2. Para la URL de la imagen:
 //    - Coloca la imagen PNG en la carpeta public/fotos/
 //    - Ejecuta: node compress-images.mjs (convierte PNG a WebP optimizado)
