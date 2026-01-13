@@ -26,6 +26,14 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   
 
   {
+    nombre: 'Agustin',
+    apellido: 'Escobar',
+    urlImagen: '/fotos/agustin.webp',
+    instagramUsername: 'agusss.e01',
+    ubicacion: 'Esperanza',
+  },  
+
+  {
     nombre: 'Alex',
     apellido: 'Valenti',
     urlImagen: '/fotos/chulo.webp',
@@ -41,17 +49,16 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     instagramUsername: 'axelov_',
     ubicacion: 'Esperanza',
   },
+  {
+    nombre: 'Aylen',
+    apellido: 'Molina',
+    urlImagen: '/fotos/aylen.webp',
+    instagramUsername: 'aylen_mln',
+    ubicacion: 'Esperanza',
+  },
   
 
 
-
-  {
-    nombre: 'Agustin',
-    apellido: 'Escobar',
-    urlImagen: '/fotos/agustin.webp',
-    instagramUsername: 'agusss.e01',
-    ubicacion: 'Esperanza',
-  },
 
   {
     nombre: 'Sofi',
@@ -68,13 +75,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     ubicacion: 'Eldorado',
   },
 
-   {
-    nombre: 'Lauty',
-    apellido: 'Lopez',
-    urlImagen: '/fotos/lautylopez.webp',
-    instagramUsername: 'lauty_lopez013',
-    ubicacion: 'Wanda',
-  },
   {
     nombre: 'Luz',
     apellido: 'Duarte',
