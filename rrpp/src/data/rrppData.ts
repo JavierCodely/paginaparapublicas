@@ -60,20 +60,20 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
 
 
 
-//  {
-  //  nombre: 'Sofi',
-  //  apellido: 'Benitez',
-  //  urlImagen: '/fotos/soffibenitezz.webp',
-  //  instagramUsername: '__soffibenitezz',
-  //  ubicacion: 'Esperanza',
-  //},
- // {
-   // nombre: 'Camila',
-    //apellido: 'Paz',
-    //urlImagen: '/fotos/pazz.webp',
-    //instagramUsername: 'pazzz_kmi',
-    //ubicacion: 'Eldorado',
- // },
+  {
+    nombre: 'Sofi',
+    apellido: 'Benitez',
+    urlImagen: '/fotos/soffibenitezz.webp',
+    instagramUsername: '__soffibenitezz',
+    ubicacion: 'Esperanza',
+  },
+ {
+    nombre: 'Camila',
+    apellido: 'Paz',
+    urlImagen: '/fotos/pazz.webp',
+    instagramUsername: 'pazzz_kmi',
+    ubicacion: 'Eldorado',
+ },
   
   {
     nombre: 'Yuli',
