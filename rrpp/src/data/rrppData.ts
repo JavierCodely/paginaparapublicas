@@ -67,13 +67,13 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   //  instagramUsername: '__soffibenitezz',
   //  ubicacion: 'Esperanza',
   //},
-  {
-    nombre: 'Camila',
-    apellido: 'Paz',
-    urlImagen: '/fotos/pazz.webp',
-    instagramUsername: 'pazzz_kmi',
-    ubicacion: 'Eldorado',
-  },
+ // {
+   // nombre: 'Camila',
+    //apellido: 'Paz',
+    //urlImagen: '/fotos/pazz.webp',
+    //instagramUsername: 'pazzz_kmi',
+    //ubicacion: 'Eldorado',
+ // },
   
   {
     nombre: 'Yuli',
@@ -108,6 +108,20 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     instagramUsername: 'paoo_borja',
     ubicacion: 'Esperanza',
   },
+  {
+    nombre: 'Karen',
+    apellido: 'Duarte',
+    urlImagen: '/fotos/karen.webp',
+    instagramUsername: 'karen06.1',
+    ubicacion: 'Esperanza',
+  },
+  {
+    nombre: 'Dara',
+    apellido: 'Aguilar',
+    urlImagen: '/fotos/dara.webp',
+    instagramUsername: 'daaraa_.0',
+    ubicacion: 'Esperanza',
+  },
 
 
     {
@@ -135,13 +149,13 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     ubicacion: 'Wanda',
   },
   
-   {
-    nombre: 'Magali',
-    apellido: 'Pinto',
-    urlImagen: '/fotos/magapinto.webp',
-    instagramUsername: '_magapinto',
-    ubicacion: 'Eldorado',
-  },
+   //{
+    //nombre: 'Magali',
+    //apellido: 'Pinto',
+    //urlImagen: '/fotos/magapinto.webp',
+    //instagramUsername: '_magapinto',
+   // ubicacion: 'Eldorado',
+  //},
   {
     nombre: 'Pablo',
     apellido: 'Mielnik',
