@@ -59,21 +59,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   
 
 
-
-  {
-    nombre: 'Sofi',
-    apellido: 'Benitez',
-    urlImagen: '/fotos/soffibenitezz.webp',
-    instagramUsername: '__soffibenitezz',
-    ubicacion: 'Esperanza',
-  },
- {
-    nombre: 'Camila',
-    apellido: 'Paz',
-    urlImagen: '/fotos/pazz.webp',
-    instagramUsername: 'pazzz_kmi',
-    ubicacion: 'Eldorado',
- },
   
   {
     nombre: 'Yuli',
@@ -142,6 +127,14 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   
 
   {
+    nombre: 'Sofi',
+    apellido: 'Benitez',
+    urlImagen: '/fotos/soffibenitezz.webp',
+    instagramUsername: '__soffibenitezz',
+    ubicacion: 'Esperanza',
+  },
+
+  {
     nombre: 'Yesi',
     apellido: 'Villalba',
     urlImagen: '/fotos/yesi.webp',
@@ -149,13 +142,13 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     ubicacion: 'Wanda',
   },
   
-   //{
-    //nombre: 'Magali',
-    //apellido: 'Pinto',
-    //urlImagen: '/fotos/magapinto.webp',
-    //instagramUsername: '_magapinto',
-   // ubicacion: 'Eldorado',
-  //},
+   {
+    nombre: 'Magali',
+    apellido: 'Pinto',
+    urlImagen: '/fotos/magapinto.webp',
+    instagramUsername: '_magapinto',
+    ubicacion: 'Eldorado',
+  },
   {
     nombre: 'Pablo',
     apellido: 'Mielnik',
