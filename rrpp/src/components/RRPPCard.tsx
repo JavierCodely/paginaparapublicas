@@ -5,6 +5,7 @@ interface RRPPCardProps {
   name: string;
   photoUrl: string;
   instagramUsername: string;
+  location: string;
   className?: string;
   isFirstImage?: boolean;
 }
@@ -13,6 +14,7 @@ export const RRPPCard = ({
   name,
   photoUrl,
   instagramUsername,
+  location,
   className = '',
   isFirstImage = false
 }: RRPPCardProps) => {
@@ -76,22 +78,26 @@ export const RRPPCard = ({
             />
           </div>
 
-          {/* Nombre clickeable centrado */}
+          {/* Nombre y ubicación clickeable centrado */}
           <a
             href={instagramUrl}
             onClick={handleClick}
             rel="noopener"
             className="
               flex-1 text-center
-              text-white font-semibold text-xl sm:text-2xl md:text-3xl
+              flex flex-col items-center justify-center
               hover:text-blue-400
               transition-colors duration-200
               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black
               rounded px-2 py-1
-              break-words
             "
           >
-            {name}
+            <span className="text-white font-semibold text-xl sm:text-2xl md:text-3xl break-words">
+              {name}
+            </span>
+            <span className="text-gray-400 text-sm sm:text-base md:text-lg mt-0.5">
+              {location}
+            </span>
           </a>
         </div>
       </div>

@@ -70,6 +70,7 @@ function App() {
                   name={`${rrpp.nombre} ${rrpp.apellido}`}
                   photoUrl={rrpp.urlImagen}
                   instagramUsername={rrpp.instagramUsername}
+                  location={rrpp.ubicacion}
                   isFirstImage={index < 3}
                 />
               ))

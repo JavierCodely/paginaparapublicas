@@ -150,6 +150,20 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     ubicacion: 'Eldorado',
   },
   {
+    nombre: 'Mairon',
+    apellido: '',
+    urlImagen: '/fotos/mairon.webp',
+    instagramUsername: 'maironn._',
+    ubicacion: 'Eldorado',
+  },
+  {
+    nombre: 'Agus',
+    apellido: 'Ferreira',
+    urlImagen: '/fotos/agusferreira.webp',
+    instagramUsername: 'aguuss_ferreiiraa',
+    ubicacion: 'Eldorado',
+  },
+  {
     nombre: 'Pablo',
     apellido: 'Mielnik',
     urlImagen: '/fotos/pablomielnik.webp',
