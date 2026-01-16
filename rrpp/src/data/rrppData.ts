@@ -120,14 +120,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   
 
   {
-    nombre: 'Sofi',
-    apellido: 'Benitez',
-    urlImagen: '/fotos/soffibenitezz.webp',
-    instagramUsername: '__soffibenitezz',
-    ubicacion: 'Esperanza',
-  },
-
-  {
     nombre: 'Yesi',
     apellido: 'Villalba',
     urlImagen: '/fotos/yesi.webp',
