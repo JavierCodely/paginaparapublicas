@@ -100,13 +100,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     instagramUsername: 'karen06.1',
     ubicacion: 'Esperanza',
   },
-  {
-    nombre: 'Dara',
-    apellido: 'Aguilar',
-    urlImagen: '/fotos/dara.webp',
-    instagramUsername: 'daaraa_.0',
-    ubicacion: 'Esperanza',
-  },
 
 
     {
