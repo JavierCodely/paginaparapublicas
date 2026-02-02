@@ -7,12 +7,10 @@ import { rrppData, ubicaciones } from './data/rrppData';
 import type { Ubicacion } from './data/rrppData';
 
 function App() {
-  const [selectedUbicacion, setSelectedUbicacion] = useState<Ubicacion | null>(null);
+  const [selectedUbicacion, setSelectedUbicacion] = useState<Ubicacion>('Esperanza');
 
   // Filtrar RRPP por ubicación
-  const filteredRRPP = selectedUbicacion
-    ? rrppData.filter(rrpp => rrpp.ubicacion === selectedUbicacion)
-    : rrppData;
+  const filteredRRPP = rrppData.filter(rrpp => rrpp.ubicacion === selectedUbicacion);
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] px-3 py-6 sm:p-6 md:p-8">
@@ -66,7 +64,7 @@ function App() {
             {filteredRRPP.length > 0 ? (
               filteredRRPP.map((rrpp, index) => (
                 <RRPPCard
-                  key={`${rrpp.id}-${selectedUbicacion || 'all'}`}
+                  key={`${rrpp.id}-${selectedUbicacion}`}
                   name={`${rrpp.nombre} ${rrpp.apellido}`}
                   photoUrl={rrpp.urlImagen}
                   instagramUsername={rrpp.instagramUsername}
@@ -75,7 +73,7 @@ function App() {
                 />
               ))
             ) : (
-              <EmptyState ubicacion={selectedUbicacion!} />
+              <EmptyState ubicacion={selectedUbicacion} />
             )}
           </div>
 
