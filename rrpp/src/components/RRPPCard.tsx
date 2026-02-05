@@ -7,6 +7,7 @@ interface RRPPCardProps {
   instagramUsername: string;
   location: string;
   className?: string;
+  isFirstImage?: boolean;
 }
 
 export const RRPPCard = ({
@@ -14,7 +15,8 @@ export const RRPPCard = ({
   photoUrl,
   instagramUsername,
   location,
-  className = ''
+  className = '',
+  isFirstImage = false
 }: RRPPCardProps) => {
   const instagramUrl = `https://www.instagram.com/${instagramUsername}`;
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -70,8 +72,9 @@ export const RRPPCard = ({
               src={photoUrl}
               alt={name}
               className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-gray-700"
-              loading="eager"
+              loading={isFirstImage ? "eager" : "lazy"}
               decoding="async"
+              fetchPriority={isFirstImage ? "high" : "low"}
             />
           </div>
 

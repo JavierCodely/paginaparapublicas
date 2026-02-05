@@ -3,7 +3,6 @@ import { RRPPCard } from './components/RRPPCard';
 import { BackgroundVideo } from './components/BackgroundVideo';
 import { LocationFilter } from './components/LocationFilter';
 import { EmptyState } from './components/EmptyState';
-import { ImagePreloader } from './components/ImagePreloader';
 import { rrppData, ubicaciones } from './data/rrppData';
 import type { Ubicacion } from './data/rrppData';
 
@@ -63,13 +62,14 @@ function App() {
           {/* Lista de RRPP o mensaje vacío */}
           <div className="w-full space-y-2 sm:space-y-3 md:space-y-4 transition-opacity duration-200">
             {filteredRRPP.length > 0 ? (
-              filteredRRPP.map((rrpp) => (
+              filteredRRPP.map((rrpp, index) => (
                 <RRPPCard
                   key={`${rrpp.id}-${selectedUbicacion}`}
                   name={`${rrpp.nombre} ${rrpp.apellido}`}
                   photoUrl={rrpp.urlImagen}
                   instagramUsername={rrpp.instagramUsername}
                   location={rrpp.ubicacion}
+                  isFirstImage={index < 3}
                 />
               ))
             ) : (
@@ -85,9 +85,6 @@ function App() {
           </div>
         </div>
       </div>
-
-      {/* Precargar todas las imágenes de RRPP ocultas */}
-      <ImagePreloader rrppData={rrppData} />
     </div>
   );
 }
