@@ -87,14 +87,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   },
 
 
-   {
-    nombre: 'Abby',
-    apellido: 'Pfaffenzeller',
-    urlImagen: '/fotos/aby.webp',
-    instagramUsername: 'abby-_pfaffenzeller08',
-    ubicacion: 'Esperanza',
-  },
-
   
   {
     nombre: 'Ayelen',
@@ -104,37 +96,12 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     ubicacion: 'Eldorado',
   },
 
-  {
-    nombre: 'Pao',
-    apellido: 'Borja',
-    urlImagen: '/fotos/paoborja.jpg',
-    instagramUsername: 'paoo_borja',
-    ubicacion: 'Esperanza',
-  },
-  {
-    nombre: 'Karen',
-    apellido: 'Duarte',
-    urlImagen: '/fotos/karen.webp',
-    instagramUsername: 'karen06.1',
-    ubicacion: 'Esperanza',
-  },
-
-
     {
     nombre: 'Debora',
     apellido: 'Chavez',
     urlImagen: '/fotos/debora.webp',
     instagramUsername: 'debora_chamorrooo',
     ubicacion: 'Esperanza',
-  },
-  
-
-  {
-    nombre: 'Yesi',
-    apellido: 'Villalba',
-    urlImagen: '/fotos/yesi.webp',
-    instagramUsername: 'yesi_villalba04',
-    ubicacion: 'Wanda',
   },
   
    {
@@ -149,13 +116,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     apellido: '',
     urlImagen: '/fotos/mairon.webp',
     instagramUsername: 'maironn._',
-    ubicacion: 'Eldorado',
-  },
-  {
-    nombre: 'Agus',
-    apellido: 'Ferreira',
-    urlImagen: '/fotos/agusferreira.webp',
-    instagramUsername: 'aguuss_ferreiiraa',
     ubicacion: 'Eldorado',
   },
   {
