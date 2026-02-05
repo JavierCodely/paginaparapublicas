@@ -35,21 +35,26 @@ export const RRPPCard = ({
 
     setIsModalOpen(false);
 
-    // Si estamos en el navegador interno de Instagram, usar la URL web directamente
-    // Esto permite que Instagram lo maneje internamente sin mostrar el modal de salida
+    // Si estamos en el navegador interno de Instagram
     if (isInstagramBrowser) {
-      // Usar window.location.href directamente con la URL web
-      // Instagram debería reconocer esta URL y abrir el perfil dentro de la app
-      window.location.href = instagramUrl;
+      if (isAndroid) {
+        // Android + Instagram browser: usar intent para forzar apertura en la app
+        const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
+        window.location.href = intentUrl;
+      } else if (isIOS) {
+        // iOS + Instagram browser: usar el esquema de URL de Instagram
+        window.location.href = `instagram://user?username=${instagramUsername}`;
+      } else {
+        // Desktop dentro de Instagram (raro pero posible)
+        window.location.href = instagramUrl;
+      }
     } else if (isAndroid) {
-      // Android: usar intent que abre la app si está instalada, sino web
+      // Android fuera de Instagram: usar intent
       const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
       window.location.href = intentUrl;
     } else if (isIOS) {
-      // iOS: usar URL scheme directo de Instagram
+      // iOS fuera de Instagram: usar URL scheme
       const appUrl = `instagram://user?username=${instagramUsername}`;
-
-      // Intentar abrir la app de Instagram
       window.location.href = appUrl;
 
       // Fallback: si la app no se abre en 1.5 segundos, abrir en navegador
