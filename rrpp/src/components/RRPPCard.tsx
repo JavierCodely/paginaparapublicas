@@ -27,27 +27,18 @@ export const RRPPCard = ({
   };
 
   const handleConfirm = () => {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isAndroid = /Android/.test(navigator.userAgent);
-    
-    // Detectar si estamos en el navegador interno de Instagram
-    const isInstagramBrowser = navigator.userAgent.includes('Instagram');
-
     setIsModalOpen(false);
 
-    // Si estamos en el navegador interno de Instagram
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
+    const isInstagramBrowser = navigator.userAgent.includes('Instagram');
+
+    // Estrategia: usar window.location.href en lugar de window.open para todos los casos
+    // Esto evita que Instagram bloquee la redirección
     if (isInstagramBrowser) {
-      if (isAndroid) {
-        // Android + Instagram browser: usar intent para forzar apertura en la app
-        const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
-        window.location.href = intentUrl;
-      } else if (isIOS) {
-        // iOS + Instagram browser: usar el esquema de URL de Instagram
-        window.location.href = `instagram://user?username=${instagramUsername}`;
-      } else {
-        // Desktop dentro de Instagram (raro pero posible)
-        window.location.href = instagramUrl;
-      }
+      // Dentro del navegador de Instagram, simplemente redirigir a la URL web
+      // Instagram debería manejar esto internamente
+      window.location.href = instagramUrl;
     } else if (isAndroid) {
       // Android fuera de Instagram: usar intent
       const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;

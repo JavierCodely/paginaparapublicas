@@ -45,7 +45,7 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm, profileName }: Confir
         </h2>
 
         <p className="text-gray-300 text-base sm:text-lg mb-6 text-center leading-relaxed">
-          Se abrirá la app de Instagram con el perfil seleccionado ¿deseas continuar?
+          Se abrirá el perfil de Instagram ¿deseas continuar?
         </p>
 
         <div className="flex flex-col gap-3">
