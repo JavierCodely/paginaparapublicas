@@ -35,28 +35,12 @@ export const RRPPCard = ({
 
     setIsModalOpen(false);
 
-    // Si estamos en el navegador interno de Instagram, usar estrategia diferente
+    // Si estamos en el navegador interno de Instagram, usar la URL web directamente
+    // Esto permite que Instagram lo maneje internamente sin mostrar el modal de salida
     if (isInstagramBrowser) {
-      // Crear un link temporal y hacer click en él
-      // Esto fuerza a Instagram a abrir el enlace correctamente
-      const link = document.createElement('a');
-      link.href = `instagram://user?username=${instagramUsername}`;
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      // Fallback: si no se abre la app en 500ms, intentar abrir en navegador externo
-      setTimeout(() => {
-        const externalLink = document.createElement('a');
-        externalLink.href = instagramUrl;
-        externalLink.target = '_blank';
-        externalLink.rel = 'noopener noreferrer';
-        externalLink.style.display = 'none';
-        document.body.appendChild(externalLink);
-        externalLink.click();
-        document.body.removeChild(externalLink);
-      }, 500);
+      // Usar window.location.href directamente con la URL web
+      // Instagram debería reconocer esta URL y abrir el perfil dentro de la app
+      window.location.href = instagramUrl;
     } else if (isAndroid) {
       // Android: usar intent que abre la app si está instalada, sino web
       const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
