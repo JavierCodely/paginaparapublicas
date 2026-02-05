@@ -5,9 +5,10 @@ export type Ubicacion = 'Esperanza' | 'Wanda' | 'Libertad' | 'Eldorado' | 'Iguaz
 
 export const ubicaciones: Ubicacion[] = [
   'Esperanza',
+  'Eldorado',
   'Wanda',
   'Libertad',
-  'Eldorado',
+  
   'Iguazu'
 ];
 
