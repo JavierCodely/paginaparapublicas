@@ -22,61 +22,37 @@ export const RRPPCard = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setIsModalOpen(true);
+    // Detectar si estamos en el navegador de Instagram
+    const isInstagramBrowser = /Instagram/.test(navigator.userAgent);
+    
+    // Si NO estamos en Instagram browser, mostrar modal
+    // Si estamos en Instagram browser, dejar que navegue directamente
+    if (!isInstagramBrowser) {
+      e.preventDefault();
+      setIsModalOpen(true);
+    }
+    // Si es Instagram browser, no hacemos preventDefault() 
+    // y el enlace navega directamente
   };
 
   const handleConfirm = () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isAndroid = /Android/.test(navigator.userAgent);
-    const isInstagramBrowser = /Instagram/.test(navigator.userAgent);
 
     setIsModalOpen(false);
 
-    // Función auxiliar para abrir URL con múltiples estrategias
-    const openUrl = (url: string) => {
-      // Estrategia 1: Intentar window.open
-      const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
-      
-      // Estrategia 2: Si window.open falla, crear un enlace temporal
-      if (!newWindow || newWindow.closed) {
-        const link = document.createElement('a');
-        link.href = url;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }
-    };
-
-    // Si estamos en el navegador interno de Instagram, usar URL directa web
-    if (isInstagramBrowser) {
-      // Instagram browser: abrir la URL web directamente
-      // El navegador de Instagram manejará esto y preguntará si quiere abrir en la app
-      openUrl(instagramUrl);
-    } else if (isAndroid) {
-      // Android fuera de Instagram: usar intent
-      const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;S.browser_fallback_url=${encodeURIComponent(instagramUrl)};end`;
-      openUrl(intentUrl);
+    // Solución simplificada basada en los cambios de Instagram 2024-2026
+    if (isAndroid) {
+      // Android: Ya no usar intent:// (bloqueado desde oct 2024)
+      // Usar URL web directa que abrirá en navegador o preguntará por la app
+      window.location.href = instagramUrl;
     } else if (isIOS) {
-      // iOS: intentar URL scheme y usar fallback
-      const appUrl = `instagram://user?username=${instagramUsername}`;
-      
-      // Crear un enlace temporal para el esquema de la app
-      const link = document.createElement('a');
-      link.href = appUrl;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Fallback: si la app no se abre, abrir en navegador
-      setTimeout(() => {
-        openUrl(instagramUrl);
-      }, 1500);
+      // iOS: Usar URL web directa
+      // iOS manejará automáticamente si quiere abrir en la app
+      window.location.href = instagramUrl;
     } else {
       // Desktop: abrir en nueva pestaña
-      openUrl(instagramUrl);
+      window.open(instagramUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
