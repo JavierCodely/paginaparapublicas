@@ -33,37 +33,50 @@ export const RRPPCard = ({
 
     setIsModalOpen(false);
 
-    // Si estamos en el navegador interno de Instagram
-    if (isInstagramBrowser) {
-      if (isAndroid) {
-        // Android + Instagram browser: usar intent para forzar apertura en la app
-        const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
-        window.location.href = intentUrl;
-      } else if (isIOS) {
-        // iOS + Instagram browser: usar el esquema de URL de Instagram
-        window.location.href = `instagram://user?username=${instagramUsername}`;
-      } else {
-        // Desktop dentro de Instagram (raro pero posible)
-        window.location.href = instagramUrl;
+    // Función auxiliar para abrir URL con múltiples estrategias
+    const openUrl = (url: string) => {
+      // Estrategia 1: Intentar window.open
+      const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
+      
+      // Estrategia 2: Si window.open falla, crear un enlace temporal
+      if (!newWindow || newWindow.closed) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       }
+    };
+
+    // Si estamos en el navegador interno de Instagram, usar URL directa web
+    if (isInstagramBrowser) {
+      // Instagram browser: abrir la URL web directamente
+      // El navegador de Instagram manejará esto y preguntará si quiere abrir en la app
+      openUrl(instagramUrl);
     } else if (isAndroid) {
       // Android fuera de Instagram: usar intent
-      const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
-      window.location.href = intentUrl;
+      const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;S.browser_fallback_url=${encodeURIComponent(instagramUrl)};end`;
+      openUrl(intentUrl);
     } else if (isIOS) {
-      // iOS: usar URL scheme directo de Instagram
+      // iOS: intentar URL scheme y usar fallback
       const appUrl = `instagram://user?username=${instagramUsername}`;
+      
+      // Crear un enlace temporal para el esquema de la app
+      const link = document.createElement('a');
+      link.href = appUrl;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-      // Intentar abrir la app de Instagram
-      window.location.href = appUrl;
-
-      // Fallback: si la app no se abre en 1.5 segundos, abrir en navegador
+      // Fallback: si la app no se abre, abrir en navegador
       setTimeout(() => {
-        window.location.href = instagramUrl;
+        openUrl(instagramUrl);
       }, 1500);
     } else {
-      // Desktop: abre en nueva pestaña
-      window.open(instagramUrl, '_blank', 'noopener,noreferrer');
+      // Desktop: abrir en nueva pestaña
+      openUrl(instagramUrl);
     }
   };
 
