@@ -29,11 +29,25 @@ export const RRPPCard = ({
   const handleConfirm = () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isAndroid = /Android/.test(navigator.userAgent);
+    const isInstagramBrowser = /Instagram/.test(navigator.userAgent);
 
     setIsModalOpen(false);
 
-    if (isAndroid) {
-      // Android: usar intent que abre la app si está instalada, sino web
+    // Si estamos en el navegador interno de Instagram
+    if (isInstagramBrowser) {
+      if (isAndroid) {
+        // Android + Instagram browser: usar intent para forzar apertura en la app
+        const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
+        window.location.href = intentUrl;
+      } else if (isIOS) {
+        // iOS + Instagram browser: usar el esquema de URL de Instagram
+        window.location.href = `instagram://user?username=${instagramUsername}`;
+      } else {
+        // Desktop dentro de Instagram (raro pero posible)
+        window.location.href = instagramUrl;
+      }
+    } else if (isAndroid) {
+      // Android fuera de Instagram: usar intent
       const intentUrl = `intent://instagram.com/_u/${instagramUsername}/#Intent;package=com.instagram.android;scheme=https;end`;
       window.location.href = intentUrl;
     } else if (isIOS) {
