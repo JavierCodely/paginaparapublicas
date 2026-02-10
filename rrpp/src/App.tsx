@@ -7,7 +7,7 @@ import { rrppData, ubicaciones } from './data/rrppData';
 import type { Ubicacion } from './data/rrppData';
 
 function App() {
-  const [selectedUbicacion, setSelectedUbicacion] = useState<Ubicacion | null>(null);
+  const [selectedUbicacion, setSelectedUbicacion] = useState<Ubicacion | null>('Esperanza');
 
   // Filtrar RRPP por ubicación
   const filteredRRPP = selectedUbicacion
@@ -70,6 +70,7 @@ function App() {
                   name={`${rrpp.nombre} ${rrpp.apellido}`}
                   photoUrl={rrpp.urlImagen}
                   instagramUsername={rrpp.instagramUsername}
+                  instagramPostUrl={rrpp.instagramPostUrl}
                   location={rrpp.ubicacion}
                   isFirstImage={index < 3}
                 />

@@ -5,6 +5,7 @@ interface RRPPCardProps {
   name: string;
   photoUrl: string;
   instagramUsername: string;
+  instagramPostUrl?: string; // URL de post específico (opcional)
   location: string;
   className?: string;
   isFirstImage?: boolean;
@@ -14,41 +15,41 @@ export const RRPPCard = ({
   name,
   photoUrl,
   instagramUsername,
+  instagramPostUrl,
   location,
   className = '',
   isFirstImage = false
 }: RRPPCardProps) => {
-  const instagramUrl = `https://www.instagram.com/${instagramUsername}`;
+  // Si hay una URL de post específica, usarla; sino, usar el perfil del usuario
+  const instagramUrl = instagramPostUrl || `https://www.instagram.com/${instagramUsername}`;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Detectar si estamos en el navegador de Instagram
-    const isInstagramBrowser = /Instagram/.test(navigator.userAgent);
-    
-    // Si NO estamos en Instagram browser, mostrar modal
-    // Si estamos en Instagram browser, dejar que navegue directamente
-    if (!isInstagramBrowser) {
-      e.preventDefault();
-      setIsModalOpen(true);
-    }
-    // Si es Instagram browser, no hacemos preventDefault() 
-    // y el enlace navega directamente
+    // Siempre prevenir la navegación por defecto y mostrar el modal
+    // El modal actuará como "página intermedia" con botón que permite
+    // usar custom URL schemes desde el click del usuario
+    e.preventDefault();
+    setIsModalOpen(true);
   };
 
   const handleConfirm = () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isAndroid = /Android/.test(navigator.userAgent);
+    const isInstagramBrowser = /Instagram/.test(navigator.userAgent);
 
     setIsModalOpen(false);
 
-    // Solución simplificada basada en los cambios de Instagram 2024-2026
-    if (isAndroid) {
-      // Android: Ya no usar intent:// (bloqueado desde oct 2024)
-      // Usar URL web directa que abrirá en navegador o preguntará por la app
+    // NOTA: Instagram tiene un bug desde el 5 Feb 2026 donde los deep links
+    // a perfiles específicos no funcionan correctamente. La app se abre pero
+    // no navega al perfil. Por ahora usamos URLs web hasta que Instagram lo arregle.
+    
+    if (isInstagramBrowser) {
+      // Dentro del navegador de Instagram
       window.location.href = instagramUrl;
-    } else if (isIOS) {
-      // iOS: Usar URL web directa
-      // iOS manejará automáticamente si quiere abrir en la app
+    } else if (isAndroid || isIOS) {
+      // Mobile (fuera de Instagram): abrir URL web
+      // El sistema operativo preguntará si quiere abrir en la app
+      // Aunque por el bug de Instagram, no irá al perfil específico
       window.location.href = instagramUrl;
     } else {
       // Desktop: abrir en nueva pestaña
