@@ -40,22 +40,24 @@ export const RRPPCard = ({
     setIsModalOpen(false);
 
     if (isInstagramBrowser) {
-      // Dentro del navegador de Instagram - intentar abrir en la app
-      // Usar target="_blank" para forzar apertura externa
-      const link = document.createElement('a');
-      link.href = instagramUrl;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Dentro del navegador de Instagram
+      // Intentar abrir usando window.open sin target para que Instagram lo maneje
+      // Instagram debería detectar que es una URL de Instagram y abrir en la app
+      try {
+        const opened = window.open(instagramUrl);
+        if (!opened) {
+          // Si window.open falla, intentar con location
+          window.location.href = instagramUrl;
+        }
+      } catch {
+        window.location.href = instagramUrl;
+      }
     } else if (isAndroid) {
       // Android: usar intent para abrir directamente en la app
       const intentUrl = `intent://${instagramUrl.replace(/^https?:\/\//, '')}#Intent;package=com.instagram.android;scheme=https;end`;
       window.location.href = intentUrl;
     } else if (isIOS) {
-      // iOS: intentar abrir en la app usando el esquema URL
-      // Primero intentar el deep link, si falla usar la URL web
+      // iOS: usar la URL web, el sistema lo manejará
       window.location.href = instagramUrl;
     } else {
       // Desktop: abrir en nueva pestaña
