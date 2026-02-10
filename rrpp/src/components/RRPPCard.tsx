@@ -39,17 +39,23 @@ export const RRPPCard = ({
 
     setIsModalOpen(false);
 
-    // NOTA: Instagram tiene un bug desde el 5 Feb 2026 donde los deep links
-    // a perfiles específicos no funcionan correctamente. La app se abre pero
-    // no navega al perfil. Por ahora usamos URLs web hasta que Instagram lo arregle.
-    
     if (isInstagramBrowser) {
-      // Dentro del navegador de Instagram
-      window.location.href = instagramUrl;
-    } else if (isAndroid || isIOS) {
-      // Mobile (fuera de Instagram): abrir URL web
-      // El sistema operativo preguntará si quiere abrir en la app
-      // Aunque por el bug de Instagram, no irá al perfil específico
+      // Dentro del navegador de Instagram - intentar abrir en la app
+      // Usar target="_blank" para forzar apertura externa
+      const link = document.createElement('a');
+      link.href = instagramUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else if (isAndroid) {
+      // Android: usar intent para abrir directamente en la app
+      const intentUrl = `intent://${instagramUrl.replace(/^https?:\/\//, '')}#Intent;package=com.instagram.android;scheme=https;end`;
+      window.location.href = intentUrl;
+    } else if (isIOS) {
+      // iOS: intentar abrir en la app usando el esquema URL
+      // Primero intentar el deep link, si falla usar la URL web
       window.location.href = instagramUrl;
     } else {
       // Desktop: abrir en nueva pestaña
