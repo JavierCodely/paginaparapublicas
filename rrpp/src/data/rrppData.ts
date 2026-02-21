@@ -132,6 +132,14 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     ubicacion: 'Eldorado',
   },
   {
+    nombre: 'Mati',
+    apellido: 'Piriz',
+    urlImagen: '/fotos/mati.png',
+    instagramPostUrl: 'https://www.instagram.com/p/DNt1OYA0q1I/?img_index=1',
+    instagramUsername: 'matipirizz_',
+    ubicacion: 'Iguazu',
+  },
+  {
     nombre: 'Mairon',
     apellido: '',
     urlImagen: '/fotos/mairon.webp',

@@ -1,12 +1,18 @@
 interface ConfirmModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onConfirm: () => void;
   profileName: string;
+  instagramUrl: string;
+  isAndroid: boolean;
 }
 
-export const ConfirmModal = ({ isOpen, onClose, onConfirm, profileName }: ConfirmModalProps) => {
+export const ConfirmModal = ({ isOpen, onClose, profileName, instagramUrl, isAndroid }: ConfirmModalProps) => {
   if (!isOpen) return null;
+
+  // Si es Android, usar intent URL para abrir directamente en la app
+  const finalUrl = isAndroid
+    ? `intent://${instagramUrl.replace(/^https?:\/\//, '')}#Intent;package=com.instagram.android;scheme=https;end`
+    : instagramUrl;
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -15,11 +21,6 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm, profileName }: Confir
 
   const handleModalClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-  };
-
-  const handleConfirm = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    onConfirm();
   };
 
   const handleCancel = (e: React.MouseEvent) => {
@@ -49,8 +50,11 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm, profileName }: Confir
         </p>
 
         <div className="flex flex-col gap-3">
-          <button
-            onClick={handleConfirm}
+          <a
+            href={finalUrl}
+            target={isAndroid ? undefined : "_blank"}
+            rel={isAndroid ? undefined : "noopener noreferrer"}
+            onClick={onClose}
             className="
               w-full py-3 px-6 rounded-full
               bg-gradient-to-r from-pink-500 to-pink-600
@@ -59,10 +63,11 @@ export const ConfirmModal = ({ isOpen, onClose, onConfirm, profileName }: Confir
               transition-all duration-200
               transform hover:scale-105 active:scale-95
               shadow-lg hover:shadow-pink-500/50
+              text-center block
             "
           >
             Continuar
-          </button>
+          </a>
 
           <button
             onClick={handleCancel}

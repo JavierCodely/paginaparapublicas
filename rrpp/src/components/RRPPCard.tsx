@@ -23,46 +23,16 @@ export const RRPPCard = ({
   // Si hay una URL de post específica, usarla; sino, usar el perfil del usuario
   const instagramUrl = instagramPostUrl || `https://www.instagram.com/${instagramUsername}`;
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  // Detectar si es Android
+  const isAndroid = /Android/.test(navigator.userAgent);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // Siempre prevenir la navegación por defecto y mostrar el modal
-    // El modal actuará como "página intermedia" con botón que permite
-    // usar custom URL schemes desde el click del usuario
+    // El modal actuará como "página intermedia" con enlace directo
+    // que evita el alert del navegador de Instagram
     e.preventDefault();
     setIsModalOpen(true);
-  };
-
-  const handleConfirm = () => {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    const isAndroid = /Android/.test(navigator.userAgent);
-    const isInstagramBrowser = /Instagram/.test(navigator.userAgent);
-
-    setIsModalOpen(false);
-
-    // Primero verificar si es Android (dentro o fuera de Instagram)
-    if (isAndroid) {
-      // Android: usar intent para abrir directamente en la app de Instagram
-      const intentUrl = `intent://${instagramUrl.replace(/^https?:\/\//, '')}#Intent;package=com.instagram.android;scheme=https;end`;
-      window.location.href = intentUrl;
-    } else if (isIOS) {
-      // iOS: usar la URL web, el sistema lo manejará
-      if (isInstagramBrowser) {
-        // En el navegador de Instagram en iOS, intentar abrir con window.open
-        try {
-          const opened = window.open(instagramUrl);
-          if (!opened) {
-            window.location.href = instagramUrl;
-          }
-        } catch {
-          window.location.href = instagramUrl;
-        }
-      } else {
-        window.location.href = instagramUrl;
-      }
-    } else {
-      // Desktop: abrir en nueva pestaña
-      window.open(instagramUrl, '_blank', 'noopener,noreferrer');
-    }
   };
 
   return (
@@ -118,8 +88,9 @@ export const RRPPCard = ({
       <ConfirmModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        onConfirm={handleConfirm}
         profileName={name}
+        instagramUrl={instagramUrl}
+        isAndroid={isAndroid}
       />
     </>
   );
