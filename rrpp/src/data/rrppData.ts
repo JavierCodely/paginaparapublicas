@@ -50,6 +50,8 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     apellido: 'Duarte',
     urlImagen: '/fotos/luz.webp',
     instagramUsername: 'luzduarte15',
+    
+    whatsappUrl: 'https://wa.me/543757303906?src=qr',
     ubicacion: 'Esperanza',
   },
   
@@ -57,6 +59,8 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     nombre: 'Aylen',
     apellido: 'Molina',
     urlImagen: '/fotos/aylen.webp',
+    whatsappUrl: 'https://wa.me/543757684896?src=qr',
+    
     instagramUsername: 'aylen_mln',
     ubicacion: 'Esperanza',
   },
@@ -85,6 +89,8 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     apellido: 'Oviedo',
     
     urlImagen: '/fotos/axel.webp',
+    
+    whatsappUrl: 'https://wa.me/543757697037?src=qr',
     instagramUsername: 'axelov_',
     ubicacion: 'Esperanza',
   },
