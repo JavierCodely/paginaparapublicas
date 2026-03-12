@@ -75,6 +75,7 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     apellido: 'Valenti',
     urlImagen: '/fotos/chulo.webp',
     instagramUsername: 'alex_valenti10',
+    whatsappUrl: 'https://wa.me/5493751235586?src=qr',
     ubicacion: 'Esperanza',
   },
 
@@ -152,7 +153,8 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
 // Función que asigna IDs automáticamente según el orden
 export const rrppData: RRPPData[] = rrppDataSinId.map((rrpp, index) => ({
   ...rrpp,
-  id: index + 1
+  id
+  : index + 1
 }));
 
 // INSTRUCCIONES:
