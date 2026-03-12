@@ -40,7 +40,7 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     apellido: 'Escobar',
     urlImagen: '/fotos/agustin.webp',
     instagramUsername: 'agusss.e01',
-    whatsappUrl: 'https://wa.me/qr/O5NE25PN6LMUL1',
+    whatsappUrl: 'https://wa.me/5493757501271?src=qr',
     ubicacion: 'Esperanza',
   },
   
