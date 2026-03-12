@@ -3,16 +3,26 @@ interface ConfirmModalProps {
   onClose: () => void;
   profileName: string;
   instagramUrl: string;
+  whatsappUrl?: string;
   isAndroid: boolean;
 }
 
-export const ConfirmModal = ({ isOpen, onClose, profileName, instagramUrl, isAndroid }: ConfirmModalProps) => {
+export const ConfirmModal = ({
+  isOpen,
+  onClose,
+  profileName,
+  instagramUrl,
+  whatsappUrl,
+  isAndroid
+}: ConfirmModalProps) => {
   if (!isOpen) return null;
 
   // Si es Android, usar intent URL para abrir directamente en la app
   const finalUrl = isAndroid
     ? `intent://${instagramUrl.replace(/^https?:\/\//, '')}#Intent;package=com.instagram.android;scheme=https;end`
     : instagramUrl;
+
+  const hasWhatsApp = Boolean(whatsappUrl);
 
   const handleBackdropClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -46,10 +56,11 @@ export const ConfirmModal = ({ isOpen, onClose, profileName, instagramUrl, isAnd
         </h2>
 
         <p className="text-gray-300 text-base sm:text-lg mb-6 text-center leading-relaxed">
-          Se abrirá el perfil de Instagram ¿deseas continuar?
+          ¿Cómo querés contactar?
         </p>
 
         <div className="flex flex-col gap-3">
+          {/* Botón Instagram */}
           <a
             href={finalUrl}
             target={isAndroid ? undefined : "_blank"}
@@ -66,7 +77,25 @@ export const ConfirmModal = ({ isOpen, onClose, profileName, instagramUrl, isAnd
               text-center block
             "
           >
-            Continuar
+            Instagram
+          </a>
+
+          {/* Botón WhatsApp */}
+          <a
+            href={hasWhatsApp ? whatsappUrl : undefined}
+            onClick={hasWhatsApp ? onClose : (e) => e.preventDefault()}
+            className={`
+              w-full py-3 px-6 rounded-full text-lg font-semibold text-center block
+              transition-all duration-200
+              ${
+                hasWhatsApp
+                  ? 'bg-green-500 hover:bg-green-600 text-white transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-green-500/50'
+                  : 'bg-gray-700 text-gray-400 cursor-not-allowed'
+              }
+            `}
+            aria-disabled={!hasWhatsApp}
+          >
+            WhatsApp
           </a>
 
           <button

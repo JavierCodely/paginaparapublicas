@@ -6,6 +6,7 @@ interface RRPPCardProps {
   photoUrl: string;
   instagramUsername: string;
   instagramPostUrl?: string; // URL de post específico (opcional)
+  whatsappUrl?: string; // URL o link de WhatsApp (opcional)
   location: string;
   className?: string;
   isFirstImage?: boolean;
@@ -16,6 +17,7 @@ export const RRPPCard = ({
   photoUrl,
   instagramUsername,
   instagramPostUrl,
+  whatsappUrl,
   location,
   className = '',
   isFirstImage = false
@@ -90,6 +92,7 @@ export const RRPPCard = ({
         onClose={() => setIsModalOpen(false)}
         profileName={name}
         instagramUrl={instagramUrl}
+        whatsappUrl={whatsappUrl}
         isAndroid={isAndroid}
       />
     </>

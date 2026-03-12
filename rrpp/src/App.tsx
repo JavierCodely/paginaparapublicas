@@ -71,6 +71,7 @@ function App() {
                   photoUrl={rrpp.urlImagen}
                   instagramUsername={rrpp.instagramUsername}
                   instagramPostUrl={rrpp.instagramPostUrl}
+                  whatsappUrl={rrpp.whatsappUrl}
                   location={rrpp.ubicacion}
                   isFirstImage={index < 3}
                 />

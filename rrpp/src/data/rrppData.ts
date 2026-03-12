@@ -18,6 +18,7 @@ export interface RRPPData {
   urlImagen: string;
   instagramUsername: string;
   instagramPostUrl?: string; // URL de post específico de Instagram (opcional)
+  whatsappUrl?: string; // URL o link de WhatsApp (opcional)
   ubicacion: Ubicacion;
 }
 
@@ -39,7 +40,7 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     apellido: 'Escobar',
     urlImagen: '/fotos/agustin.webp',
     instagramUsername: 'agusss.e01',
-    instagramPostUrl: 'https://www.instagram.com/p/DAeWlSAyyHD/',
+    whatsappUrl: 'https://wa.me/qr/O5NE25PN6LMUL1',
     ubicacion: 'Esperanza',
   },
   
