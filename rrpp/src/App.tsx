@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#1a1a1a] px-3 py-6 sm:p-6 md:p-8">
       {/* Video de fondo - se carga al final */}
-      <BackgroundVideo imageUrl="/videos/inDaClub2.png" />
+      <BackgroundVideo imageUrl="/videos/InDaClub2.png" />
       <div className="w-full max-w-2xl mx-auto relative z-10">
         <div className="flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8">
 

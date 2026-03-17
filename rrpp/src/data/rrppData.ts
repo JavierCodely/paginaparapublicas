@@ -5,9 +5,6 @@ export type Ubicacion = 'Esperanza' | 'Wanda' | 'Libertad' | 'Eldorado' | 'Iguaz
 
 export const ubicaciones: Ubicacion[] = [
   'Esperanza',
-  'Wanda',
-  'Libertad',
-  'Eldorado',
   'Iguazu'
 ];
 
@@ -43,47 +40,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     whatsappUrl: 'https://wa.me/5493757501271?src=qr',
     ubicacion: 'Esperanza',
   },
-  
-  
-  {
-    nombre: 'Luz',
-    apellido: 'Duarte',
-    urlImagen: '/fotos/luz.webp',
-    instagramUsername: 'luzduarte15',
-    
-    whatsappUrl: 'https://wa.me/543757303906?src=qr',
-    ubicacion: 'Esperanza',
-  },
-  
-  {
-    nombre: 'Aylen',
-    apellido: 'Molina',
-    urlImagen: '/fotos/aylen.webp',
-    whatsappUrl: 'https://wa.me/543757684896?src=qr',
-    
-    instagramUsername: 'aylen_mln',
-    ubicacion: 'Esperanza',
-  },
-
-  
-  {
-    nombre: 'Daniela',
-    apellido: 'Toledo',
-    urlImagen: '/fotos/daniela_toledo.webp',
-    instagramUsername: 'daniela_toledo15',
-    ubicacion: 'Esperanza',
-  },
-
-  {
-    nombre: 'Alex',
-    apellido: 'Valenti',
-    urlImagen: '/fotos/chulo.webp',
-    instagramUsername: 'alex_valenti10',
-    whatsappUrl: 'https://wa.me/5493751235586?src=qr',
-    ubicacion: 'Esperanza',
-  },
-
-
   {
     nombre: 'Axel',
     apellido: 'Oviedo',
@@ -95,63 +51,45 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     ubicacion: 'Esperanza',
   },
 
-
   
+ 
   {
-    nombre: 'Yuli',
-    apellido: 'Recalde',
-    urlImagen: '/fotos/yuli.webp',
-    instagramUsername: '_yuli.recalde',
-    ubicacion: 'Eldorado',
-  },
-
-
-  
-  {
-    nombre: 'Ayelen',
-    apellido: 'Paz',
-    urlImagen: '/fotos/pazayelen.webp',
-    instagramUsername: 'pazayelen__',
-    ubicacion: 'Eldorado',
-  },
-
-    {
-    nombre: 'Debora',
-    apellido: 'Chavez',
-    urlImagen: '/fotos/debora.webp',
-    instagramUsername: 'debora_chamorrooo',
+    nombre: 'Aylen',
+    apellido: 'Molina',
+    urlImagen: '/fotos/aylen.webp',
+    whatsappUrl: 'https://wa.me/543757684896?src=qr',
+    
+    instagramUsername: 'aylen_mln',
     ubicacion: 'Esperanza',
   },
+
   
-   {
-    nombre: 'Magali',
-    apellido: 'Pinto',
-    urlImagen: '/fotos/magapinto.webp',
-    instagramUsername: '_magapinto',
-    ubicacion: 'Eldorado',
+
+  {
+    nombre: 'Alex',
+    apellido: 'Valenti',
+    urlImagen: '/fotos/chulo.webp',
+    instagramUsername: 'alex_valenti10',
+    whatsappUrl: 'https://wa.me/5493751235586?src=qr',
+    ubicacion: 'Esperanza',
   },
+
+
+
+
+  
+  
+
+  
+
+    
   {
     nombre: 'Mati',
     apellido: 'Piriz',
     urlImagen: '/fotos/mati.png',
     instagramUsername: 'matipirizz_',
     ubicacion: 'Iguazu',
-  },
-  {
-    nombre: 'Mairon',
-    apellido: '',
-    urlImagen: '/fotos/mairon.webp',
-    instagramUsername: 'maironn._',
-    ubicacion: 'Eldorado',
-  },
-  {
-    nombre: 'Pablo',
-    apellido: 'Mielnik',
-    urlImagen: '/fotos/pablomielnik.webp',
-    
-    instagramUsername: 'pabloo_mielnik',
-    ubicacion: 'Eldorado',
-  },
+  }
 
 
 ];
