@@ -62,6 +62,14 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     instagramUsername: 'aylen_mln',
     ubicacion: 'Esperanza',
   },
+  {
+    nombre: 'Maria',
+    apellido: 'Correa',
+    urlImagen: '/fotos/maricorrea.webp',
+    whatsappUrl: 'https://wa.me/543757500783?src=qr',
+    instagramUsername: 'mariiacorreaaa',
+    ubicacion: 'Esperanza',
+  },
 
   
 
