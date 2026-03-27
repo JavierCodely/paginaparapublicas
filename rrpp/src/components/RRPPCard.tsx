@@ -44,23 +44,26 @@ export const RRPPCard = ({
           bg-black/40 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] p-1.5 sm:p-2
           transition-all duration-300
           hover:scale-[1.02] sm:hover:scale-105 hover:bg-black/50
-          border border-transparent hover:border-gray-700
+          border border-red-600/50 hover:border-red-500
           active:scale-[0.98]
           ${className}
         `}
       >
         <div className="flex items-center gap-3 sm:gap-4">
-          {/* Foto circular del RRPP */}
-          <div className="flex-shrink-0">
+          {/* Foto circular del RRPP — clickeable */}
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="flex-shrink-0 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black"
+          >
             <img
               src={photoUrl}
               alt={name}
-              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-gray-700"
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-red-600/50 hover:border-red-500 transition-colors duration-200"
               loading={isFirstImage ? "eager" : "lazy"}
               decoding="async"
               fetchPriority={isFirstImage ? "high" : "low"}
             />
-          </div>
+          </button>
 
           {/* Nombre y ubicación clickeable centrado */}
           <a

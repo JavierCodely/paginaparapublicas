@@ -20,7 +20,7 @@ export const LocationFilter = ({ ubicaciones, selectedUbicacion, onSelectUbicaci
               transition-all duration-200
               ${
                 selectedUbicacion === ubicacion
-                  ? 'bg-gradient-to-r from-pink-500 to-pink-600 text-white shadow-lg scale-105'
+                  ? 'bg-gradient-to-r from-red-500 to-pink-600 text-white shadow-lg scale-105'
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
               }
             `}

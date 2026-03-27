@@ -1,11 +1,13 @@
 // Archivo de datos de RRPP
 // Edita este archivo para agregar, modificar o eliminar RRPP
 
-export type Ubicacion = 'Esperanza' | 'Wanda' | 'Libertad' | 'Eldorado' | 'Iguazu';
+export type Ubicacion = 'Esperanza' | 'Wanda' | 'Libertad' | 'Eldorado' | 'Iguazú';
 
 export const ubicaciones: Ubicacion[] = [
   'Esperanza',
-  'Iguazu'
+  'Iguazú',
+  'Wanda',
+  'Libertad'
 ];
 
 export interface RRPPData {
@@ -62,15 +64,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     instagramUsername: 'aylen_mln',
     ubicacion: 'Esperanza',
   },
-  {
-    nombre: 'Maria',
-    apellido: 'Correa',
-    urlImagen: '/fotos/maricorrea.webp',
-    whatsappUrl: 'https://wa.me/543757500783?src=qr',
-    instagramUsername: 'mariiacorreaaa',
-    ubicacion: 'Esperanza',
-  },
-
   
 
   {
@@ -82,8 +75,29 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     ubicacion: 'Esperanza',
   },
 
+  {
+    nombre: 'Maria',
+    apellido: 'Correa',
+    urlImagen: '/fotos/maricorrea.webp',
+    whatsappUrl: 'https://wa.me/543757500783?src=qr',
+    instagramUsername: 'mariiacorreaaa',
+    ubicacion: 'Esperanza',
+  },
 
-
+  {
+    nombre: 'Mario',
+    apellido: 'Ramos',
+    urlImagen: '/fotos/marioramos.webp',
+    instagramUsername: 'marioramos1087',
+    ubicacion: 'Wanda',
+  },
+  {
+    nombre: 'Nico',
+    apellido: 'Zilz',
+    urlImagen: '/fotos/nicozilz.webp',
+    instagramUsername: 'nico_zilz',
+    ubicacion: 'Wanda',
+  },
 
   
   
@@ -96,7 +110,7 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     apellido: 'Piriz',
     urlImagen: '/fotos/mati.png',
     instagramUsername: 'matipirizz_',
-    ubicacion: 'Iguazu',
+    ubicacion: 'Iguazú',
   }
 
 

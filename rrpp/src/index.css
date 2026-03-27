@@ -12,9 +12,77 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #1a1a1a;
+  background-color: #000000;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* ========================
+   EFECTO NEON — ROJO
+   ======================== */
+
+.neon-text-red {
+  color: #ff1a1a;
+  text-shadow:
+    0 0 6px  rgba(255, 26,  26, 0.95),
+    0 0 12px rgba(255, 26,  26, 0.75),
+    0 0 25px rgba(255, 26,  26, 0.55),
+    0 0 50px rgba(200,  0,   0, 0.35);
+}
+
+.neon-border-red {
+  border-color: rgba(255, 26, 26, 0.45) !important;
+  box-shadow:
+    0 0  8px rgba(255, 26, 26, 0.38),
+    0 0 20px rgba(255, 26, 26, 0.20),
+    inset 0 0 10px rgba(255, 26, 26, 0.07);
+}
+
+@keyframes neon-pulse-red {
+  0%, 100% {
+    text-shadow:
+      0 0  6px rgba(255, 26, 26, 0.95),
+      0 0 12px rgba(255, 26, 26, 0.75),
+      0 0 25px rgba(255, 26, 26, 0.55),
+      0 0 50px rgba(200,  0,  0, 0.35);
+  }
+  50% {
+    text-shadow:
+      0 0  3px rgba(255, 26, 26, 0.60),
+      0 0  7px rgba(255, 26, 26, 0.45),
+      0 0 14px rgba(255, 26, 26, 0.28),
+      0 0 28px rgba(200,  0,  0, 0.15);
+  }
+}
+
+.neon-pulse-red {
+  animation: neon-pulse-red 2.8s ease-in-out infinite;
+}
+
+.neon-line-red {
+  background: linear-gradient(90deg, transparent, #ff1a1a 50%, transparent);
+  box-shadow:
+    0 0  8px rgba(255, 26, 26, 0.65),
+    0 0 18px rgba(255, 26, 26, 0.30);
+}
+
+/* Collage — altura responsiva */
+.collage-grid {
+  height: 355px;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+@media (min-width: 400px) {
+  .collage-grid { height: 432px; }
+}
+
+@media (min-width: 640px) {
+  .collage-grid { height: 541px; }
+}
+
+/* Hover overlay en celdas del collage */
+.collage-cell:hover .collage-overlay {
+  opacity: 1;
 }

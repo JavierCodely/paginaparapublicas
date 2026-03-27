@@ -48,7 +48,7 @@ export const ConfirmModal = ({
 
       {/* Modal */}
       <div
-        className="relative bg-[#1a1a1a] border-2 border-gray-700 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl"
+        className="relative bg-black/40 border border-red-600/40 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl backdrop-blur-md"
         onClick={handleModalClick}
       >
         <h2 className="text-white text-xl sm:text-2xl font-bold mb-4 text-center">
@@ -68,12 +68,11 @@ export const ConfirmModal = ({
             onClick={onClose}
             className="
               w-full py-3 px-6 rounded-full
-              bg-gradient-to-r from-pink-500 to-pink-600
-              hover:from-pink-600 hover:to-pink-700
+              bg-red-600 hover:bg-red-500
               text-white font-semibold text-lg
               transition-all duration-200
               transform hover:scale-105 active:scale-95
-              shadow-lg hover:shadow-pink-500/50
+              shadow-lg hover:shadow-red-600/50
               text-center block
             "
           >
