@@ -21,18 +21,6 @@ interface Evento {
 const EVENTOS: Evento[] = [
   {
     id: 1,
-    nombre: 'IN DA CLUB 2',
-    fecha: { dia: '28', mes: 'MAR', año: '2026' },
-    descripcion:
-      'Una noche de tech house. 3 DJ´s en vivo',
-    genero: 'TECH HOUSE',
-    tags: ['🎧 DJ en Vivo', '🍹 Open Bar', '🎫 Entrada Limitada'],
-    activo: true,
-    imagen: '/flyers/InDaClub2(1).png',           // ← pegá la ruta de tu flyer, ej: '/eventos/noche-roja.webp'
-    destacado: true,
-  },
-  {
-    id: 2,
     nombre: 'DROOP ANIVERSARIO',
     fecha: { dia: '04', mes: 'ABR', año: '2026' },
     descripcion:
@@ -40,8 +28,22 @@ const EVENTOS: Evento[] = [
     genero: 'Reggaeton · FUNK · CACHENGUE',
     tags: ['🎧 DJ en Vivo'],
     activo: true,
-    imagen: '/flyers/doop.jpg',           // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
+    imagen: '/flyers/doop.jpg',
+    destacado: true,
+    // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
   },
+  {
+    id: 2,
+    nombre: 'IN DA CLUB 2',
+    fecha: { dia: '28', mes: 'MAR', año: '2026' },
+    descripcion:
+      'Una noche de tech house. 3 DJ´s en vivo',
+    genero: 'TECH HOUSE',
+    tags: ['🎧 DJ en Vivo', '🍹 Open Bar', '🎫 Entrada Limitada'],
+    activo: false,
+    imagen: '/flyers/InDaClub2(1).png',           // ← pegá la ruta de tu flyer, ej: '/eventos/noche-roja.webp'
+    destacado: false,
+  }
 ];
 
 export const UpcomingEvents = () => {
