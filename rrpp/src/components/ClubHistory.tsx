@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Galeria } from './Galeria';
 
 // Poné el nombre de tu archivo de video en public/videos/
@@ -13,6 +14,26 @@ const STATS = [
 const TAGS = ['🎤 DJs', '🎵 Músicos', '💃 Artistas', '📸 Fotógrafos', '🎬 Productores'];
 
 export const ClubHistory = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // El video solo carga y reproduce cuando entra en pantalla
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    obs.observe(video);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <div className="w-full space-y-8 sm:space-y-12 mt-4 sm:mt-8 pb-8">
 
@@ -71,13 +92,13 @@ export const ClubHistory = () => {
 
         {VIDEO_FILE && (
           <video
+            ref={videoRef}
             className="absolute inset-0 w-full h-full object-cover"
             src={`/videos/${VIDEO_FILE}`}
-            autoPlay
             muted
             loop
             playsInline
-            preload="auto"
+            preload="none"
           />
         )}
 

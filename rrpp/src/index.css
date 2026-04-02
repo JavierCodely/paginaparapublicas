@@ -86,3 +86,19 @@ body {
 .collage-cell:hover .collage-overlay {
   opacity: 1;
 }
+
+/* Barra de progreso del slideshow */
+@keyframes slideProgress {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+.slide-progress {
+  animation: slideProgress linear forwards;
+  width: 0%;
+}
+
+/* Reducir animaciones en dispositivos que lo prefieran */
+@media (prefers-reduced-motion: reduce) {
+  .neon-pulse-red    { animation: none; }
+  .slide-progress    { animation: none; width: 100%; }
+}
