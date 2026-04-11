@@ -27,9 +27,9 @@ const EVENTOS: Evento[] = [
       'DROOP ANIVERSARIO',
     genero: 'Reggaeton · FUNK · CACHENGUE',
     tags: ['🎧 DJ en Vivo'],
-    activo: true,
+    activo: false,
     imagen: '/flyers/doop.jpg',
-    destacado: true,
+    destacado: false,
     // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
   },
   {
