@@ -63,7 +63,7 @@ export const ClubHistory = () => {
           <p>
             Desde el corazón de{' '}
             <strong className="text-white">Puerto Esperanza, Misiones</strong>, nacimos
-            con una sola misión: crear las noches más únicas de la región.
+            con una sola misión: crear las noches más únicas de la zona.
           </p>
           <p>
             Con más de{' '}

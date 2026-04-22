@@ -21,6 +21,19 @@ interface Evento {
 const EVENTOS: Evento[] = [
   {
     id: 1,
+    nombre: 'ONLY FUNK',
+    fecha: { dia: '05', mes: 'MAY', año: '2026' },
+    descripcion:
+      'Una noche de puro FUNK con los mejores 2 DJ´s de la zona en vivo',
+    genero: 'FUNK · ARROCHA FUNK',
+    tags: ['🎧 DJ en Vivo', '🍹 CONSERVADORA FREE', '🎫 Entrada Limitada'],
+    activo: true,
+    imagen: '/flyers/only.webp',
+    destacado: true,
+    // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
+  },
+  {
+    id: 2,
     nombre: 'DROOP ANIVERSARIO',
     fecha: { dia: '04', mes: 'ABR', año: '2026' },
     descripcion:
@@ -33,7 +46,7 @@ const EVENTOS: Evento[] = [
     // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
   },
   {
-    id: 2,
+    id: 3,
     nombre: 'IN DA CLUB 2',
     fecha: { dia: '28', mes: 'MAR', año: '2026' },
     descripcion:
