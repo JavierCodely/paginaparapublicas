@@ -22,7 +22,7 @@ const EVENTOS: Evento[] = [
   {
     id: 1,
     nombre: 'ONLY FUNK',
-    fecha: { dia: '05', mes: 'MAY', año: '2026' },
+    fecha: { dia: '02', mes: 'MAY', año: '2026' },
     descripcion:
       'Una noche de puro FUNK con los mejores 2 DJ´s de la zona en vivo',
     genero: 'FUNK · ARROCHA FUNK',
