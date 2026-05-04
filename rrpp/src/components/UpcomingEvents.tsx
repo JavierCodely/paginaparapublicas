@@ -27,7 +27,7 @@ const EVENTOS: Evento[] = [
       'Una noche de puro FUNK con los mejores 2 DJ´s de la zona en vivo',
     genero: 'FUNK · ARROCHA FUNK',
     tags: ['🎧 DJ en Vivo', '🍹 CONSERVADORA FREE', '🎫 Entrada Limitada'],
-    activo: true,
+    activo: false,
     imagen: '/flyers/only.webp',
     destacado: true,
     // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
