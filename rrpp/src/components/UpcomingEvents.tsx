@@ -20,6 +20,19 @@ interface Evento {
 
 const EVENTOS: Evento[] = [
   {
+    id: 0,
+    nombre: 'WE LOVE REGGAETON',
+    fecha: { dia: '23', mes: 'MAY', año: '2026' },
+    descripcion:
+      'Una noche de puro REGGAETON old school',
+    genero: 'REGGAETON',
+    tags: ['🎧 DJ en Vivo', '🎫 Entrada Limitada'],
+    activo: true,
+    imagen: '/flyers/regaeton.png',
+    destacado: true,
+    // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
+  },
+  {
     id: 1,
     nombre: 'ONLY FUNK',
     fecha: { dia: '02', mes: 'MAY', año: '2026' },
