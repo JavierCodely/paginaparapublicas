@@ -28,7 +28,7 @@ const EVENTOS: Evento[] = [
     genero: 'REGGAETON',
     tags: ['🎧 DJ en Vivo', '🎫 Entrada Limitada'],
     activo: true,
-    imagen: '/flyers/regaeton.png',
+    imagen: '/flyers/regeaton.png',
     destacado: true,
     // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
   },
