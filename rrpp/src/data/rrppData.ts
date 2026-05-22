@@ -1,13 +1,11 @@
 // Archivo de datos de RRPP
 // Edita este archivo para agregar, modificar o eliminar RRPP
 
-export type Ubicacion = 'Esperanza' | 'Wanda' | 'Libertad' | 'Eldorado' | 'Iguazú';
+export type Ubicacion = 'Esperanza' | 'Iguazú';
 
 export const ubicaciones: Ubicacion[] = [
   'Esperanza',
-  'Iguazú',
-  'Wanda',
-  'Libertad'
+  'Iguazú'
 ];
 
 export interface RRPPData {
@@ -64,17 +62,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   },
 
   
- 
-  {
-    nombre: 'Aylen',
-    apellido: 'Molina',
-    urlImagen: '/fotos/aylen.webp',
-    whatsappUrl: 'https://wa.me/543757684896?src=qr',
-    
-    instagramUsername: 'aylen_mln',
-    ubicacion: 'Esperanza',
-  },
-  
 
   {
     nombre: 'Alex',
@@ -83,21 +70,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     instagramUsername: 'alex_valenti10',
     whatsappUrl: 'https://wa.me/5493751235586?src=qr',
     ubicacion: 'Esperanza',
-  },
-
-  {
-    nombre: 'Mario',
-    apellido: 'Ramos',
-    urlImagen: '/fotos/marioramos.webp',
-    instagramUsername: 'marioramos1087',
-    ubicacion: 'Libertad',
-  },
-  {
-    nombre: 'Nico',
-    apellido: 'Zilz',
-    urlImagen: '/fotos/nicozilz.webp',
-    instagramUsername: 'nico_zilz',
-    ubicacion: 'Wanda',
   },
 
   
