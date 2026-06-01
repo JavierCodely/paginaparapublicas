@@ -20,30 +20,15 @@ interface Evento {
 
 const EVENTOS: Evento[] = [
   {
-    id: 0,
-    nombre: 'WE LOVE REGGAETON',
-    fecha: { dia: '23', mes: 'MAY', año: '2026' },
-    descripcion:
-      'Una noche de puro REGGAETON old school',
-    genero: 'REGGAETON',
-    tags: ['🎧 DJ en Vivo', '🎫 Entrada Limitada'],
-    activo: true,
-    imagen: '/flyers/regeaton.png',
-    destacado: true,
-    // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
-  },
-  {
     id: 1,
-    nombre: 'ONLY FUNK',
-    fecha: { dia: '02', mes: 'MAY', año: '2026' },
-    descripcion:
-      'Una noche de puro FUNK con los mejores 2 DJ´s de la zona en vivo',
-    genero: 'FUNK · ARROCHA FUNK',
-    tags: ['🎧 DJ en Vivo', '🍹 CONSERVADORA FREE', '🎫 Entrada Limitada'],
-    activo: false,
-    imagen: '/flyers/only.webp',
+    nombre: 'DROOP - Noche del Chapeu',
+    fecha: { dia: '2', mes: 'Junio', año: '2026' },
+    descripcion: 'Noche del Chapeu con la DROOP en el club exodos',
+    genero: 'DROOP',
+    tags: ['CONSERVADORA FREE', 'Noche del Chapeu'],
+    activo: true,
+    imagen: '/flyers/noche.png',
     destacado: true,
-    // ← pegá la ruta de tu flyer, ej: '/eventos/latin-fever.webp'
   }
 ];
 
