@@ -22,7 +22,7 @@ const EVENTOS: Evento[] = [
   {
     id: 1,
     nombre: 'DROOP - Noche del Chapeu',
-    fecha: { dia: '2', mes: 'Junio', año: '2026' },
+    fecha: { dia: '20', mes: 'Junio', año: '2026' },
     descripcion: 'Noche del Chapeu con la DROOP en el club exodos',
     genero: 'DROOP',
     tags: ['CONSERVADORA FREE', 'Noche del Chapeu'],
