@@ -1,11 +1,14 @@
 // Archivo de datos de RRPP
 // Edita este archivo para agregar, modificar o eliminar RRPP
 
-export type Ubicacion = 'Esperanza' | 'Iguazú';
+export type Ubicacion = 'Esperanza' | 'Iguazú' | 'Libertad' | 'Wanda' ;
+
 
 export const ubicaciones: Ubicacion[] = [
   'Esperanza',
-  'Iguazú'
+  'Iguazú',
+  'Libertad',
+  'Wanda'
 ];
 
 export interface RRPPData {
@@ -73,7 +76,20 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   },
 
   
-  
+  {
+    nombre: 'Mario',
+    apellido: 'Ramos',
+    urlImagen: '/fotos/marioramos.webp',
+    instagramUsername: 'marioramos1087',
+    ubicacion: 'Libertad',
+  },
+  {
+    nombre: 'Nico',
+    apellido: 'Zilz',
+    urlImagen: '/fotos/nicozilz.webp',
+    instagramUsername: 'nico_zilz',
+    ubicacion: 'Wanda',
+  },
 
   
 
