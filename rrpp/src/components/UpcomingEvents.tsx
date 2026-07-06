@@ -23,7 +23,7 @@ const EVENTOS: Evento[] = [
   {
     id: 0,
     nombre: 'ONLY - CANDY',
-    fecha: { dia: '10', mes: 'Julio', año: '2026' },
+    fecha: { dia: '11', mes: 'Julio', año: '2026' },
     descripcion: 'UNA NOCHE DE PURO FUNK, ARROCHA FUNK Y REGGAETON',
     genero: 'FUNK, ARROCHA FUNK, REGGAETON',
     tags: ['CONSERVADORA FREE', '2 DJ TODA LA NOCHE'],
