@@ -20,39 +20,7 @@ interface Evento {
 
 const EVENTOS: Evento[] = [
   
-  {
-    id: 0,
-    nombre: 'ONLY - CANDY',
-    fecha: { dia: '11', mes: 'Julio', año: '2026' },
-    descripcion: 'UNA NOCHE DE PURO FUNK, ARROCHA FUNK Y REGGAETON',
-    genero: 'FUNK, ARROCHA FUNK, REGGAETON',
-    tags: ['CONSERVADORA FREE', '2 DJ TODA LA NOCHE'],
-    activo: true,
-    imagen: '/flyers/noche2.png',
-    destacado: true,
-  },
-  {
-    id: 1,
-    nombre: 'DYSTOPIA',
-    fecha: { dia: '17', mes: 'Julio', año: '2026' },
-    descripcion: 'DYSTOPIA nace para romper la rutina y transformar cada noche en una experienciaWhere Chaos Finds Rhythm.🤘🩵',
-    genero: 'TECH HOUSE - TECHNO - MINIMAL TECH',
-    tags: ['ELECTRONICA'],
-    activo: true,
-    imagen: '/flyers/noche3.png',
-    destacado: false,
-  },
-  {
-    id: 2,
-    nombre: 'DROOP - Noche del Chapeu',
-    fecha: { dia: '20', mes: 'Junio', año: '2026' },
-    descripcion: 'Noche del Chapeu con la DROOP en el club exodos',
-    genero: 'DROOP',
-    tags: ['CONSERVADORA FREE', 'Noche del Chapeu'],
-    activo: false,
-    imagen: '/flyers/noche.png',
-    destacado: false,
-  }
+  
 ];
 
 export const UpcomingEvents = () => {
