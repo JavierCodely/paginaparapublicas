@@ -51,57 +51,13 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     instagramUsername: 'elias.vive',
     whatsappUrl: 'https://wa.me/543757585076?src=qr',
     ubicacion: 'Esperanza',
-  },
-
-  {
-    nombre: 'Axel',
-    apellido: 'Oviedo',
-    
-    urlImagen: '/fotos/axel.webp',
-    
-    whatsappUrl: 'https://wa.me/543757697037?src=qr',
-    instagramUsername: 'axelov_',
-    ubicacion: 'Esperanza',
-  },
-
-  
-
-  {
-    nombre: 'Alex',
-    apellido: 'Valenti',
-    urlImagen: '/fotos/chulo.webp',
-    instagramUsername: 'alex_valenti10',
-    whatsappUrl: 'https://wa.me/5493751235586?src=qr',
-    ubicacion: 'Esperanza',
-  },
-
-  
-  {
-    nombre: 'Mario',
-    apellido: 'Ramos',
-    urlImagen: '/fotos/marioramos.webp',
-    instagramUsername: 'marioramos1087',
-    ubicacion: 'Libertad',
-  },
-  {
-    nombre: 'Nico',
-    apellido: 'Zilz',
-    urlImagen: '/fotos/nicozilz.webp',
-    instagramUsername: 'nico_zilz',
-    ubicacion: 'Wanda',
-  },
-
-  
-
-    
-  {
-    nombre: 'Mati',
-    apellido: 'Piriz',
-    urlImagen: '/fotos/mati.png',
-    instagramUsername: 'matipirizz_',
-    ubicacion: 'Iguazú',
   }
 
+  
+
+  
+
+    
 
 ];
 
