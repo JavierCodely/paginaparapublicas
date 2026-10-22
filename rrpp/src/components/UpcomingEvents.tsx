@@ -20,7 +20,16 @@ interface Evento {
 
 const EVENTOS: Evento[] = [
   
-  
+    {
+      id: 1,
+      nombre: 'HALLOWEEN EDITION',
+      fecha: { dia: '31', mes: 'Octubre', año: '2026' },
+      descripcion: 'Este 31 de OCTUBRE se pudre todo en ÉXODOS 🕸️👻Prepárate para vivir una noche a puro baile, disfraces y mucha fiesta 🧟‍♂️ ya que los encargados de la noche son los mejores de la zona @djnicolasbarrios 🎧 y @lucas_venialgoo 🔥Y veni con tu mejor disfraz porque hay PREMIO AL MEJOR DISFRAZ INDIVIDUAL Y GRUPAL 🎭🍻 Ingreso con conservadora',
+      genero: 'Funk - Reggaeton - CONSERVADORA FREE' ,
+      tags: ['Halloween', 'DROP' , 'CLUB EXODOS'],
+      imagen: '/flyers/hallo.png',
+      activo: true,
+    },
 ];
 
 export const UpcomingEvents = () => {

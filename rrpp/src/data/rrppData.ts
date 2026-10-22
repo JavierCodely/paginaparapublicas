@@ -6,9 +6,11 @@ export type Ubicacion = 'Esperanza' | 'Iguazú' | 'Libertad' | 'Wanda' ;
 
 export const ubicaciones: Ubicacion[] = [
   'Esperanza',
-  'Iguazú',
+  
+  'Wanda',
+  
   'Libertad',
-  'Wanda'
+  'Iguazú'
 ];
 
 export interface RRPPData {
@@ -51,8 +53,43 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     instagramUsername: 'elias.vive',
     whatsappUrl: 'https://wa.me/543757585076?src=qr',
     ubicacion: 'Esperanza',
-  }
+  },
 
+  {
+    nombre: 'Agustina',
+    apellido: 'Cardozo',
+    urlImagen: '/fotos/AgustinaCardozo.png',
+    instagramUsername: 'agussscardozo_',
+    whatsappUrl: 'https://wa.me/543757547504?src=qr',
+    ubicacion: 'Libertad',
+  },
+  
+  {
+    nombre: 'Ezequiel',
+    apellido: 'Villalba',
+    urlImagen: '/fotos/Ezequiel.png',
+    instagramUsername: 'ezequiiel_villalba',
+    whatsappUrl: 'https://wa.me/543757585076?src=qr',
+    ubicacion: 'Esperanza',
+  },
+  
+  {
+    nombre: 'Agustina',
+    apellido: 'Davalos',
+    urlImagen: '/fotos/AgustinaDavalos.png',
+    instagramUsername: 'agustina_davalos08',
+    whatsappUrl: 'https://wa.me/543757610816?src=qr',
+    ubicacion: 'Wanda',
+  },
+  
+  {
+    nombre: 'Nico',
+    apellido: 'Zilz',
+    urlImagen: '/fotos/Nico.png',
+    instagramUsername: 'nico_zilz',
+    whatsappUrl: 'https://wa.me/543757525976?src=qr',
+    ubicacion: 'Wanda',
+  },
   
 
   

@@ -194,10 +194,6 @@ export const Galeria = () => {
         ))}
       </div>
 
-      <p className="text-gray-700 text-[9px] sm:text-[10px] text-center tracking-wider uppercase">
-        Agregá fotos en <span className="text-gray-600">public/Galeria/</span> y el nombre en <span className="text-gray-600">src/data/galeriaFotos.ts</span>
-      </p>
-
       {lightboxIndice !== null && (
         <Lightbox fotos={urls} indiceInicial={lightboxIndice} onCerrar={() => setLightboxIndice(null)} />
       )}

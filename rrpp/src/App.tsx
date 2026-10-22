@@ -20,8 +20,8 @@ function App() {
         <div className="flex flex-col items-center space-y-4 sm:space-y-6 md:space-y-8">
 
           {/* Texto descriptivo */}
-          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl text-center font-medium px-2 sm:px-4 max-w-xl leading-relaxed">
-            CONSEGUI TU INGRESO CON NUESTROS PUBLICAS💖
+          <p className="text-white text-md sm:text-base md:text-lg lg:text-xl text-center font-medium px-2 sm:px-4 max-w-xl leading-relaxed">
+            CONSEGUI TU INGRESO QR CON NUESTROS PUBLICAS💖
           </p>
 
           {/* Separador visual */}
@@ -56,8 +56,8 @@ function App() {
 
           {/* Texto de ayuda */}
           <div className="pt-2 sm:pt-4">
-            <p className="text-gray-600 text-xs sm:text-sm text-center px-4">
-              Hace click en el nombre para contactar via Instagram
+            <p className="text-white text-xs sm:text-sm text-center px-4">
+              Hace click en el nombre para contactar via Instagram o whatsapp para conseguir tu entrada qr
             </p>
           </div>
 
