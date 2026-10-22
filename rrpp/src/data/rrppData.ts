@@ -69,7 +69,7 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     apellido: 'Villalba',
     urlImagen: '/fotos/Ezequiel.png',
     instagramUsername: 'ezequiiel_villalba',
-    whatsappUrl: 'https://wa.me/543757585076?src=qr',
+    whatsappUrl: 'https://wa.me/54375750-4262?src=qr',
     ubicacion: 'Esperanza',
   },
   
