@@ -27,7 +27,7 @@ const EVENTOS: Evento[] = [
       descripcion: 'Este 31 de OCTUBRE se pudre todo en ÉXODOS 🕸️👻Prepárate para vivir una noche a puro baile, disfraces y mucha fiesta 🧟‍♂️ ya que los encargados de la noche son los mejores de la zona @djnicolasbarrios 🎧 y @lucas_venialgoo 🔥Y veni con tu mejor disfraz porque hay PREMIO AL MEJOR DISFRAZ INDIVIDUAL Y GRUPAL 🎭🍻 Ingreso con conservadora',
       genero: 'Funk - Reggaeton - CONSERVADORA FREE' ,
       tags: ['Halloween', 'DROP' , 'CLUB EXODOS'],
-      imagen: '/flyers/hallo.png',
+      imagen: '/flyers/hallo.webp',
       activo: true,
     },
 ];
@@ -77,6 +77,9 @@ export const UpcomingEvents = () => {
                     alt={`Flyer ${evento.nombre}`}
                     className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                     loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={448}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                   <div

@@ -58,7 +58,7 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   {
     nombre: 'Agustina',
     apellido: 'Cardozo',
-    urlImagen: '/fotos/AgustinaCardozo.png',
+    urlImagen: '/fotos/AgustinaCardozo.webp',
     instagramUsername: 'agussscardozo_',
     whatsappUrl: 'https://wa.me/543757547504?src=qr',
     ubicacion: 'Libertad',
@@ -67,16 +67,16 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   {
     nombre: 'Ezequiel',
     apellido: 'Villalba',
-    urlImagen: '/fotos/Ezequiel.png',
+    urlImagen: '/fotos/Ezequiel.webp',
     instagramUsername: 'ezequiiel_villalba',
-    whatsappUrl: 'https://wa.me/54375750-4262?src=qr',
+    whatsappUrl: 'https://wa.me/543757504262?src=qr',
     ubicacion: 'Esperanza',
   },
   
   {
     nombre: 'Agustina',
     apellido: 'Davalos',
-    urlImagen: '/fotos/AgustinaDavalos.png',
+    urlImagen: '/fotos/AgustinaDavalos.webp',
     instagramUsername: 'agustina_davalos08',
     whatsappUrl: 'https://wa.me/543757610816?src=qr',
     ubicacion: 'Wanda',
@@ -85,7 +85,7 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   {
     nombre: 'Nico',
     apellido: 'Zilz',
-    urlImagen: '/fotos/Nico.png',
+    urlImagen: '/fotos/Nico.webp',
     instagramUsername: 'nico_zilz',
     whatsappUrl: 'https://wa.me/543757525976?src=qr',
     ubicacion: 'Wanda',
@@ -101,8 +101,7 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
 // Función que asigna IDs automáticamente según el orden
 export const rrppData: RRPPData[] = rrppDataSinId.map((rrpp, index) => ({
   ...rrpp,
-  id
-  : index + 1
+  id: index + 1,
 }));
 
 // INSTRUCCIONES:

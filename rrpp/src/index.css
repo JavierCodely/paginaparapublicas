@@ -8,11 +8,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background-color: #000000;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
 * {
@@ -97,8 +103,16 @@ body {
   width: 0%;
 }
 
-/* Reducir animaciones en dispositivos que lo prefieran */
 @media (prefers-reduced-motion: reduce) {
-  .neon-pulse-red    { animation: none; }
-  .slide-progress    { animation: none; width: 100%; }
+  .neon-pulse-red { animation: none; }
+  .slide-progress { animation: none; width: 100%; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

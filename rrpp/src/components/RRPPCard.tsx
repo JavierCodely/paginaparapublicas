@@ -1,103 +1,69 @@
-import { useState } from 'react';
-import { ConfirmModal } from './ConfirmModal';
+import { memo } from 'react';
 
 interface RRPPCardProps {
   name: string;
   photoUrl: string;
-  instagramUsername: string;
-  instagramPostUrl?: string; // URL de post específico (opcional)
-  whatsappUrl?: string; // URL o link de WhatsApp (opcional)
   location: string;
-  className?: string;
   isFirstImage?: boolean;
+  onContact: () => void;
 }
 
-export const RRPPCard = ({
+export const RRPPCard = memo(function RRPPCard({
   name,
   photoUrl,
-  instagramUsername,
-  instagramPostUrl,
-  whatsappUrl,
   location,
-  className = '',
-  isFirstImage = false
-}: RRPPCardProps) => {
-  // Si hay una URL de post específica, usarla; sino, usar el perfil del usuario
-  const instagramUrl = instagramPostUrl || `https://www.instagram.com/${instagramUsername}`;
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  
-  // Detectar si es Android
-  const isAndroid = /Android/.test(navigator.userAgent);
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Siempre prevenir la navegación por defecto y mostrar el modal
-    // El modal actuará como "página intermedia" con enlace directo
-    // que evita el alert del navegador de Instagram
-    e.preventDefault();
-    setIsModalOpen(true);
-  };
-
+  isFirstImage = false,
+  onContact,
+}: RRPPCardProps) {
   return (
-    <>
-      <div
-        className={`
-          bg-black/40 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] p-1.5 sm:p-2
-          transition-all duration-300
-          hover:scale-[1.02] sm:hover:scale-105 hover:bg-black/50
-          border border-red-600/50 hover:border-red-500
-          active:scale-[0.98]
-          ${className}
-        `}
-      >
-        <div className="flex items-center gap-3 sm:gap-4">
-          {/* Foto circular del RRPP — clickeable */}
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="flex-shrink-0 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black"
-          >
-            <img
-              src={photoUrl}
-              alt={name}
-              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-red-600/50 hover:border-red-500 transition-colors duration-200"
-              loading={isFirstImage ? "eager" : "lazy"}
-              decoding="async"
-              fetchPriority={isFirstImage ? "high" : "low"}
-            />
-          </button>
+    <div
+      className="
+        bg-black/40 rounded-[40px] sm:rounded-[50px] md:rounded-[60px] p-1.5 sm:p-2
+        transition-transform duration-300
+        hover:scale-[1.02] sm:hover:scale-105 hover:bg-black/50
+        border border-red-600/50 hover:border-red-500
+        active:scale-[0.98]
+      "
+    >
+      <div className="flex items-center gap-3 sm:gap-4">
+        <button
+          type="button"
+          onClick={onContact}
+          className="flex-shrink-0 rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-black"
+          aria-label={`Contactar a ${name}`}
+        >
+          <img
+            src={photoUrl}
+            alt={name}
+            width={96}
+            height={96}
+            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-red-600/50 hover:border-red-500 transition-colors duration-200"
+            loading={isFirstImage ? 'eager' : 'lazy'}
+            decoding="async"
+            fetchPriority={isFirstImage ? 'high' : 'low'}
+          />
+        </button>
 
-          {/* Nombre y ubicación clickeable centrado */}
-          <a
-            href={instagramUrl}
-            onClick={handleClick}
-            rel="noopener"
-            className="
-              flex-1 text-center
-              flex flex-col items-center justify-center
-              hover:text-blue-400
-              transition-colors duration-200
-              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black
-              rounded px-2 py-1
-            "
-          >
-            <span className="text-white font-semibold text-xl sm:text-2xl md:text-3xl break-words">
-              {name}
-            </span>
-            <span className="text-gray-400 text-sm sm:text-base md:text-lg mt-0.5">
-              {location}
-            </span>
-          </a>
-        </div>
+        <button
+          type="button"
+          onClick={onContact}
+          className="
+            flex-1 text-center
+            flex flex-col items-center justify-center
+            hover:text-blue-400
+            transition-colors duration-200
+            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black
+            rounded px-2 py-1
+          "
+        >
+          <span className="text-white font-semibold text-xl sm:text-2xl md:text-3xl break-words">
+            {name}
+          </span>
+          <span className="text-gray-400 text-sm sm:text-base md:text-lg mt-0.5">
+            {location}
+          </span>
+        </button>
       </div>
-
-      {/* Modal de confirmación - Fuera del card */}
-      <ConfirmModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        profileName={name}
-        instagramUrl={instagramUrl}
-        whatsappUrl={whatsappUrl}
-        isAndroid={isAndroid}
-      />
-    </>
+    </div>
   );
-};
+});

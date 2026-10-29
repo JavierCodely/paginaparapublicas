@@ -6,12 +6,16 @@ export default defineConfig({
   plugins: [react()],
   publicDir: 'public',
   build: {
+    target: 'es2020',
+    modulePreload: { polyfill: false },
     // Optimizar el tamaño del bundle
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Separar React en su propio chunk
-          'react-vendor': ['react', 'react-dom'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('scheduler')) return 'react-vendor';
+            return 'vendor';
+          }
         },
         // Optimizar nombres de archivos para mejor caching
         assetFileNames: (assetInfo) => {

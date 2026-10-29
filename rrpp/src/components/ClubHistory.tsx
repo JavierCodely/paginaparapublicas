@@ -99,6 +99,8 @@ export const ClubHistory = () => {
             loop
             playsInline
             preload="none"
+            disablePictureInPicture
+            disableRemotePlayback
           />
         )}
 
