@@ -37,14 +37,6 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   //   ubicacion: 'Esperanza',
   // },
 
-  {
-    nombre: 'Agustin',
-    apellido: 'Escobar',
-    urlImagen: '/fotos/agustin.webp',
-    instagramUsername: 'agusss.e01',
-    whatsappUrl: 'https://wa.me/5493757501271?src=qr',
-    ubicacion: 'Esperanza',
-  },
   
   {
     nombre: 'Elias',
