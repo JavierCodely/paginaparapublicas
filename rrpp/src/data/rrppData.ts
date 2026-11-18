@@ -48,6 +48,15 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
   },
 
   {
+    nombre: 'Ferchu',
+    apellido: 'Ortigoza',
+    urlImagen: '/fotos/ferchu.jpeg',
+    instagramUsername: 'ferchu_ortigozaa10',
+    whatsappUrl: 'https://wa.me/543757624732?src=qr',
+    ubicacion: 'Esperanza',
+  },
+
+  {
     nombre: 'Agustina',
     apellido: 'Cardozo',
     urlImagen: '/fotos/AgustinaCardozo.webp',
@@ -82,7 +91,14 @@ const rrppDataSinId: Omit<RRPPData, 'id'>[] = [
     whatsappUrl: 'https://wa.me/543757525976?src=qr',
     ubicacion: 'Wanda',
   },
-  
+  {
+    nombre: 'Agus',
+    apellido: 'Escobar',
+    urlImagen: '/fotos/agustin.webp',
+    instagramUsername: 'agusss.eco01',
+    whatsappUrl: 'https://wa.me/543757501271?src=qr',
+    ubicacion: 'Esperanza',
+  },
 
   
 
