@@ -7,9 +7,6 @@ import { LazyMount } from './components/LazyMount';
 import { rrppData, ubicaciones } from './data/rrppData';
 import type { RRPPData, Ubicacion } from './data/rrppData';
 
-const UpcomingEvents = lazy(() =>
-  import('./components/UpcomingEvents').then((m) => ({ default: m.UpcomingEvents }))
-);
 const ClubHistory = lazy(() =>
   import('./components/ClubHistory').then((m) => ({ default: m.ClubHistory }))
 );
@@ -87,12 +84,6 @@ function App() {
             </span>
             <div className="flex-1 h-px neon-line-red opacity-40" />
           </div>
-
-          <LazyMount minHeight="420px">
-            <Suspense fallback={null}>
-              <UpcomingEvents />
-            </Suspense>
-          </LazyMount>
 
           <LazyMount minHeight="800px">
             <Suspense fallback={null}>
